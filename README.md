@@ -10,6 +10,10 @@ This template is available through [DSW Registry](https://registry.ds-wizard.org
 
 ## Changelog
 
+### 1.1.0
+
+- Adjusted to template metamodel version 3 (released in DSW 2.12.0)
+
 ### 1.0.0
 
 Initial version developed during the [BioHackathon Europe 2020](https://www.biohackathon-europe.org).

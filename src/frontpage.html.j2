@@ -68,6 +68,11 @@
       <dd><span class="contact-name">{{ ctx.createdBy.firstName }} {{ ctx.createdBy.lastName }}</span> ({{ macros.formatEmail(ctx.createdBy.email) }}){% if ctx.createdBy.affiliation %}<br>{{ ctx.createdBy.affiliation }}{% endif %}</dd>
       {%- endif -%}
 
+      {% for version in ctx.questionnaireVersions if version.uuid == ctx.questionnaireVersion %}
+      <dt>Version</dt>
+      <dd>{{version.name}} ({{ version.createdAt|datetime_format("%d %b %Y") }})</dd>
+      {% endfor %}
+
       <dt>Generated on</dt>
       <dd>{{ ctx.createdAt|datetime_format("%d %b %Y") }}</dd>
     </dl>
