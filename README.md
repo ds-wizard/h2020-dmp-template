@@ -10,6 +10,11 @@ This template is available through [DSW Registry](https://registry.ds-wizard.org
 
 ## Changelog
 
+### 1.3.0
+
+- Adjusted to template metamodel version 5 (released in DSW 3.5.0)
+- Fix of typo "provice" in section 2.1
+
 ### 1.2.0
 
 - Adjusted to template metamodel version 4 (released in DSW 3.2.0)
