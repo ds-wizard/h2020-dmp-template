@@ -1,7 +1,7 @@
 <header>
   <p class="dmp"></p>
   <h1>
-    {{ ctx.questionnaireName }}
+    {{ dc.qtn.name }}
   </h1>
   <h3>
     Following the <strong>Horizon 2020 DMP Template v2.0</strong>
@@ -56,25 +56,25 @@
       {%- endif -%}
 
       <dt>Based on</dt>
-      <dd>{{ ctx.package.name }}, {{ ctx.package.version }} (<span class="package-id"><span class="organization-id">{{ ctx.package.organizationId }}</span>:<span class="km-id">{{ ctx.package.kmId }}</span>:<span class="version">{{ ctx.package.version }}</span></span>)</dd>
+      <dd>{{ dc.pkg.name }}, {{ dc.pkg.version }} (<span class="package-id"><span class="organization-id">{{ dc.pkg.org_id }}</span>:<span class="km-id">{{ dc.pkg.km_id }}</span>:<span class="version">{{ dc.pkg.version }}</span></span>)</dd>
 
-      {%- if ctx.phaseUuid -%}
+      {%- if dc.current_phase -%}
       <dt>Project phase</dt>
-      <dd>{{ km.entities.phases[ctx.phaseUuid].title }}</dd>
+      <dd>{{ dc.current_phase.title }}</dd>
       {%- endif -%}
 
-      {%- if ctx.createdBy -%}
+      {%- if dc.qtn.created_by -%}
       <dt>Created by</dt>
-      <dd><span class="contact-name">{{ ctx.createdBy.firstName }} {{ ctx.createdBy.lastName }}</span> ({{ macros.formatEmail(ctx.createdBy.email) }}){% if ctx.createdBy.affiliation %}<br>{{ ctx.createdBy.affiliation }}{% endif %}</dd>
+      <dd><span class="contact-name">{{ dc.qtn.created_by.first_name }} {{ dc.qtn.created_by.last_name }}</span> ({{ macros.formatEmail(dc.qtn.created_by.email) }}){% if dc.qtn.created_by.affiliation %}<br>{{ dc.qtn.created_by.affiliation }}{% endif %}</dd>
       {%- endif -%}
 
-      {% for version in ctx.questionnaireVersions if version.uuid == ctx.questionnaireVersion %}
+      {% for version in dc.qtn.versions if version.uuid == dc.qtn.version %}
       <dt>Version</dt>
-      <dd>{{version.name}} ({{ version.createdAt|datetime_format("%d %b %Y") }})</dd>
+      <dd>{{version.name}} ({{ version.created_at|datetime_format("%d %b %Y %H:%M:%S") }} UTC)</dd>
       {% endfor %}
 
       <dt>Generated on</dt>
-      <dd>{{ ctx.createdAt|datetime_format("%d %b %Y") }}</dd>
+      <dd>{{ dc.doc.created_at|datetime_format("%d %b %Y") }} UTC</dd>
     </dl>
     <p class="dsw">
       Data Management Plan created in Data Stewardship Wizard &laquo;<a href="https://ds-wizard.org" target="_blank">ds-wizard.org</a>&raquo;

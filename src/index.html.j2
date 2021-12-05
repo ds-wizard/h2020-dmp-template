@@ -2,6 +2,7 @@
 {%- set km = ctx.knowledgeModel -%}
 {%- set repliesMap = ctx.questionnaireReplies -%}
 {%- set report = ctx.report -%}
+{%- set dc = ctx|to_context_obj -%}
 {% import "src/macros.html.j2" as macros with context %}
 {% import "src/uuids.j2" as uuids with context %}
 <html lang="en">

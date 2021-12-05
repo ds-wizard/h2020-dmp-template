@@ -10,6 +10,11 @@ This template is available through [DSW Registry](https://registry.ds-wizard.org
 
 ## Changelog
 
+### 1.4.0
+
+- Adjusted to template metamodel version 6 (released in DSW 3.6.0)
+- Started to use the new document context where suitable
+
 ### 1.3.0
 
 - Adjusted to template metamodel version 5 (released in DSW 3.5.0)
