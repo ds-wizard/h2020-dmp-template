@@ -40,7 +40,7 @@
           All data centers where project data is stored carry sufficient certifications.
         {%- endif -%}
         {%- if risksHttpsAUuid == uuids.risksHttpsYesAUuid %}
-          All project web services addressed via secure http (https://...).
+          All project web services are addressed via secure HTTP (https://...).
         {%- endif -%}
         {%- if risksInstructedAUuid == uuids.risksInstructedYesAUuid %}
           Project members have been instructed about both generic and specific risks to the project.
@@ -156,6 +156,21 @@
 
       {%- if coldSentences|length > 0 -%}
         <p>{{ coldSentences|join(" ") }}</p>
+      {%- endif -%}
+    {%- endif -%}
+
+    {# Collaboration #}
+    {%- set collabPath = [uuids.creatingCUuid, uuids.collabQUuid]|reply_path -%}
+    {%- set collabAUuid = repliesMap[collabPath]|reply_str_value -%}
+    {%- if collabAUuid == uuids.collabNoAUuid -%}
+      <p>We are not running the project in a collaboration between different groups nor institutes. Therefore, no collaboration agreement related to data access is needed.</p>
+    {%- elif collabAUuid == uuids.collabYesAUuid -%}
+      {%- set collabAgreePath = [collabPath, collabAUuid, uuids.collabAgreeQUuid]|reply_path -%}
+      {%- set collabAgreeAUuid = repliesMap[collabAgreePath]|reply_str_value -%}
+      {%- if collabAgreeAUuid == uuids.collabAgreeNoAUuid -%}
+        <p>We are running the project in a collaboration between different groups and institutes. However, there is no collaboration agreement in the project that describes who can have access to what data.</p>
+      {%- elif collabAgreeAUuid == uuids.collabAgreeYesAUuid -%}
+        <p>We are running the project in a collaboration between different groups and institutes. A collaboration agreement that describes who can have access to what data in the project is set.</p>
       {%- endif -%}
     {%- endif -%}
   </div>
