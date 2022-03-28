@@ -10,6 +10,10 @@ This template is available through [DSW Registry](https://registry.ds-wizard.org
 
 ## Changelog
 
+### 1.7.1
+
+- Fix Jinja template nesting error
+
 ### 1.7.0
 
 - Compatible with `dsw:root:2.4.0`
