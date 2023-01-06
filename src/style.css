@@ -134,6 +134,61 @@ dl .contact-name {
   margin: -2px 0 -2px 2px;
 }
 
+div#dmp-projects,
+div#dmp-contributors,
 div#dmp-content {
   page-break-before: always;
+}
+
+/* Versions */
+
+div#dmp-versions table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+div#dmp-versions table,
+div#dmp-versions td,
+div#dmp-versions th {
+  border: 1px solid black;
+}
+
+div#dmp-versions td,
+div#dmp-versions th {
+  padding: 0.2em;
+}
+
+div#dmp-versions th.title {
+  text-transform: uppercase;
+}
+
+div#dmp-versions td.version-name {
+  text-align: center;
+  word-wrap: break-word;
+}
+
+div#dmp-versions td.version-date {
+  text-align: center;
+  width: 18ex;
+}
+
+div#dmp-versions td.version-changes {
+  word-wrap: break-word;
+}
+
+div#dmp-versions td.no-versions {
+  font-style: italic;
+  padding: 1em;
+  text-align: center;
+}
+
+/* Contributors */
+
+.contributor .name {
+  font-weight: bold;
+}
+
+.contributor .role,
+.contributor .affiliation {
+  font-style: italic;
 }
