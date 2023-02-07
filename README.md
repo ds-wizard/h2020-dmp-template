@@ -4,15 +4,23 @@
 
 The template is based on the official [Template Horizon 2020 Data Management Plan (DMP) v2.0](https://ec.europa.eu/research/participants/data/ref/h2020/other/gm/reporting/h2020-tpl-oa-data-mgt-plan-annotated_en.pdf)
 
+
 ## Usage
 
 This template is available through [DSW Registry](https://registry.ds-wizard.org/templates).
 
+
+## Issues and Contributing
+
+This document template for DSW is available as open-source via GitHub Repository [ds-wizard/h2020-dmp-template](https://github.com/ds-wizard/h2020-dmp-template), you can [report issues](https://github.com/ds-wizard/h2020-dmp-template/issues) there and fork it for customisations or contributions.
+
+
 ## Changelog
 
-### Unreleased
+### 1.10.0
 
 - Add versions overview / change tracker table
+- Adjusted to template metamodel version 11 (released in DSW 3.20.0)
 
 ### 1.9.1
 
@@ -20,7 +28,7 @@ This template is available through [DSW Registry](https://registry.ds-wizard.org
 
 ### 1.9.0
 
-- Adjusted to template metamodel version 9 (released in DSW 3.12.0)
+- Adjusted to template metamodel version 10 (released in DSW 3.12.0)
 
 ### 1.8.0
 
