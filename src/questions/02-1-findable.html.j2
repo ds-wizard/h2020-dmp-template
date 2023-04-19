@@ -123,20 +123,28 @@
       {%- elif metadataMiaAUuid == uuids.metadataMiaYesAUuid -%}
         {%- set metadataMiaListPath = [metadataMiaPath, uuids.metadataMiaYesAUuid, uuids.metadataMiaListQUuid]|reply_path -%}
         {%- set metadataMiaListItems = repliesMap[metadataMiaListPath]|reply_items -%}
-        {%- if metadataMiaListItems|length > 0 -%}
-          <p>There are the following 'Minimal Metadata About ...' (MIA...) standards for our experiments:
-          <ul>
+        
+        {%- set metadataStandardReplies = [] -%}
           {%- for metadataMiaItem in metadataMiaListItems -%}
             {%- set itemPrefix = [metadataMiaListPath, metadataMiaItem]|reply_path -%}
             {%- set metadataMiaWhichPath = [itemPrefix, uuids.metadataMiaWhichQUuid]|reply_path -%}
             {%- set metadataMiaWhichReply = repliesMap[metadataMiaWhichPath] -%}
-            <li>{{ macros.integrationValue(metadataMiaWhichReply, uuids.metadataMiaWhichQUuid) }}<li>
+              {%- if metadataMiaWhichReply -%}
+                {%- do metadataStandardReplies.append(metadataMiaWhichReply) -%}
+              {%- endif -%}
           {%- endfor -%}
-          </ul>
-          </p>
-        {%- else -%}
-          <p>There are 'Minimal Metadata About ...' (MIA...) standards for our experiments.</p>
-        {%- endif -%}
+          
+          {%- if metadataStandardReplies|length > 0 -%}
+            <p>There are the following 'Minimal Metadata About ...' (MIA...) standards for our experiments:
+            <ul>
+            {%- for metadataStandardReply in metadataStandardReplies -%}
+              <li>{{ macros.integrationValue(metadataStandardReply, uuids.metadataMiaWhichQUuid) }}</li>
+            {%- endfor -%}
+            </ul>
+            </p>
+          {%- else -%}
+            <p>There are 'Minimal Metadata About ...' (MIA...) standards for our experiments.</p>
+          {%- endif -%}
       {%- endif -%}
       {# Metadata #}
       {# Good provenance (lab notebooks) #}
