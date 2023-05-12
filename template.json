@@ -1,7 +1,7 @@
 {
     "templateId": "h2020-dmp",
     "organizationId": "dsw",
-    "version": "1.10.0",
+    "version": "1.11.0",
     "name": "Horizon 2020 DMP",
     "description": "Data Management Plan according to the H2020 template",
     "license": "Apache-2.0",
@@ -42,109 +42,107 @@
             "icon": "far fa-file-pdf",
             "steps": [
                 {
-                "name": "jinja",
-                "options": {
-                    "template": "src/index.html.j2",
-                    "content-type": "text/html",
-                    "extension": "html"
-                }
+                    "name": "jinja",
+                    "options": {
+                        "template": "src/index.html.j2",
+                        "content-type": "text/html",
+                        "extension": "html"
+                    }
                 },
                 {
-                "name": "wkhtmltopdf",
-                "options": {
-                    "args": "--disable-smart-shrinking --footer-center [page] --footer-font-name \"Noto Serif\" --footer-spacing 10 --footer-font-size 10 -B 25mm -L 25mm -R 25mm -T 25mm"
-                }
+                    "name": "weasyprint",
+                    "options": {}
                 }
             ]
-            },
-            {
+        },
+        {
             "uuid": "dbc94579-40d7-42c3-975c-71e30d07778b",
             "name": "LaTeX Document",
             "icon": "far fa-file-alt",
             "steps": [
                 {
-                "name": "jinja",
-                "options": {
-                    "template": "src/index.html.j2",
-                    "content-type": "text/html",
-                    "extension": "html"
-                }
+                    "name": "jinja",
+                    "options": {
+                        "template": "src/index.html.j2",
+                        "content-type": "text/html",
+                        "extension": "html"
+                    }
                 },
                 {
-                "name": "pandoc",
-                "options": {
-                    "from": "html",
-                    "to": "latex"
-                }
+                    "name": "pandoc",
+                    "options": {
+                        "from": "html",
+                        "to": "latex"
+                    }
                 }
             ]
-            },
-            {
+        },
+        {
             "uuid": "f4bd941a-dfbe-4226-a1fc-200fb5269311",
             "name": "MS Word Document",
             "icon": "far fa-file-word",
             "steps": [
                 {
-                "name": "jinja",
-                "options": {
-                    "template": "src/index.html.j2",
-                    "content-type": "text/html",
-                    "extension": "html"
-                }
+                    "name": "jinja",
+                    "options": {
+                        "template": "src/index.html.j2",
+                        "content-type": "text/html",
+                        "extension": "html"
+                    }
                 },
                 {
-                "name": "pandoc",
-                "options": {
-                    "from": "html",
-                    "to": "docx"
-                }
+                    "name": "pandoc",
+                    "options": {
+                        "from": "html",
+                        "to": "docx"
+                    }
                 }
             ]
-            },
-            {
+        },
+        {
             "uuid": "15e53172-bbae-4a0c-a4d9-8f3ddf60e7b6",
             "name": "OpenDocument Text",
             "icon": "far fa-file-alt",
             "steps": [
                 {
-                "name": "jinja",
-                "options": {
-                    "template": "src/index.html.j2",
-                    "content-type": "text/html",
-                    "extension": "html"
-                }
+                    "name": "jinja",
+                    "options": {
+                        "template": "src/index.html.j2",
+                        "content-type": "text/html",
+                        "extension": "html"
+                    }
                 },
                 {
-                "name": "pandoc",
-                "options": {
-                    "from": "html",
-                    "to": "odt"
-                }
+                    "name": "pandoc",
+                    "options": {
+                        "from": "html",
+                        "to": "odt"
+                    }
                 }
             ]
-            },
-            {
+        },
+        {
             "uuid": "f0533e48-f4c5-4af2-b2c1-5a47d4a247c0",
             "name": "Markdown Document",
             "icon": "far fa-file-alt",
             "steps": [
                 {
-                "name": "jinja",
-                "options": {
-                    "template": "src/index.html.j2",
-                    "content-type": "text/html",
-                    "extension": "html"
-                }
+                    "name": "jinja",
+                    "options": {
+                        "template": "src/index.html.j2",
+                        "content-type": "text/html",
+                        "extension": "html"
+                    }
                 },
                 {
-                "name": "pandoc",
-                "options": {
-                    "from": "html",
-                    "to": "markdown"
-                }
+                    "name": "pandoc",
+                    "options": {
+                        "from": "html",
+                        "to": "markdown"
+                    }
                 }
             ]
-            }
+        }
     ],
     "_tdk": {
         "version": "3.20.0",
