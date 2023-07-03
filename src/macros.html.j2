@@ -23,7 +23,7 @@
     {%- set question = dc.e.questions[questionUuid] -%}
     {%- set integration = question.integration -%}
     {%- set integrationLink = integration.item(reply.value.value.id) -%}
-    <a href="{{ integrationLink }}" target="_blank">{{ reply.value.value.value }}</a>
+    <a href="{{ integrationLink }}" target="_blank">{{ reply.value.value.value|markdown }}</a>
   {%- elif reply %}
     {{ reply.value.value.value }}
   {%- endif -%}
