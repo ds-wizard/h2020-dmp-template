@@ -17,10 +17,13 @@ This document template for DSW is available as open-source via GitHub Repository
 
 ## Changelog
 
-### Unreleased
+### 1.11.0
 
 - Switch from `wkhtmltopdf` to `weasyprint` for PDF
 - Improve styling for PDF and HTML
+- Fix (non-)reference data in data summary
+- Align data openness with the KM
+- Fix privacy use / cannot use issue
 
 ### 1.10.0
 
