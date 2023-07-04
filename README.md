@@ -17,6 +17,10 @@ This document template for DSW is available as open-source via GitHub Repository
 
 ## Changelog
 
+### 1.12.1
+
+- Fix extra `endif`
+
 ### 1.12.0
 
 - Update for `dsw:root:2.5.0`
