@@ -173,16 +173,15 @@
               {%- set refDataConditionsAUuid = repliesMap[refDataConditionsPath]|reply_str_value -%}
               {%- if refDataConditionsAUuid -%}
                 <li>
-                  <strong>{{ macros.integrationValue(refDataNameReply, uuids.refDataNameQUuid) }}</strong>
-                  <span class="separator">&ndash;</span>
+                  <div>{{ macros.integrationValue(refDataNameReply) }}</div>
                   {% if refDataConditionsAUuid == uuids.refDataConditionsCC0AUuid -%}
-                    freely available for any use (public domain or CC0).
+                    It is freely available for any use (public domain or CC0).
                   {%- elif refDataConditionsAUuid == uuids.refDataConditionsCCBYAUuid -%}
-                    freely available with obligation to quote the source (e.g. CC-BY).
+                    It is freely available with obligation to quote the source (e.g. CC-BY).
                   {%- elif refDataConditionsAUuid == uuids.refDataConditionsOtherAUuid -%}
                     {%- set refDataConditionsOtherPath = [refDataConditionsPath, uuids.refDataConditionsOtherAUuid, uuids.refDataConditionsOtherQUuid]|reply_path -%}
                     {%- set refDataConditionsOther = repliesMap[refDataConditionsOtherPath]|reply_str_value -%}
-                    available under specific restrictions, which we will follow in our project{{ ": " ~ refDataConditionsOther|dot if refDataConditionsOther else "." }}
+                    It is available under specific restrictions, which we will follow in our project{{ ": " ~ refDataConditionsOther|dot if refDataConditionsOther else "." }}
                   {%- endif -%}
                 </li>
               {%- endif -%}
@@ -194,16 +193,15 @@
               {%- set nrefDataConditionsAUuid = repliesMap[nrefDataConditionsPath]|reply_str_value -%}
               {%- if nrefDataConditionsAUuid -%}
                 <li>
-                  <strong>{{ macros.integrationValue(nrefDataNameReply, uuids.nrefDataNameQUuid) }}</strong>
-                  <span class="separator">&ndash;</span>
+                  <div>{{ macros.integrationValue(nrefDataNameReply) }}</div>
                   {% if nrefDataConditionsAUuid == uuids.nrefDataConditionsCC0AUuid -%}
-                    freely available for any use (public domain or CC0).
+                    It is freely available for any use (public domain or CC0).
                   {%- elif nrefDataConditionsAUuid == uuids.nrefDataConditionsCCBYAUuid -%}
-                    freely available with obligation to quote the source (e.g. CC-BY).
+                    It is freely available with obligation to quote the source (e.g. CC-BY).
                   {%- elif nrefDataConditionsAUuid == uuids.nrefDataConditionsOtherAUuid -%}
                     {%- set nrefDataConditionsOtherPath = [nrefDataConditionsPath, uuids.nrefDataConditionsOtherAUuid, uuids.nrefDataConditionsOtherQUuid]|reply_path -%}
                     {%- set nrefDataConditionsOther = repliesMap[nrefDataConditionsOtherPath]|reply_str_value -%}
-                    available under specific restrictions, which we will follow in our project{{ ": " ~ nrefDataConditionsOther|dot if nrefDataConditionsOther else "." }}
+                    It is available under specific restrictions, which we will follow in our project{{ ": " ~ nrefDataConditionsOther|dot if nrefDataConditionsOther else "." }}
                   {%- endif -%}
                 </li>
               {%- endif -%}
@@ -223,16 +221,15 @@
             {%- set refDataConditionsAUuid = repliesMap[refDataConditionsPath]|reply_str_value -%}
             {%- if refDataConditionsAUuid -%}
               <li>
-                <strong>{{ macros.integrationValue(refDataNameReply, uuids.refDataNameQUuid) }}</strong>
-                <span class="separator">&ndash;</span>
+                <div>{{ macros.integrationValue(refDataNameReply) }}</div>
                 {% if refDataConditionsAUuid == uuids.refDataConditionsCC0AUuid -%}
-                  freely available for any use (public domain or CC0).
+                  It is freely available for any use (public domain or CC0).
                 {%- elif refDataConditionsAUuid == uuids.refDataConditionsCCBYAUuid -%}
-                  freely available with obligation to quote the source (e.g. CC-BY).
+                  It is freely available with obligation to quote the source (e.g. CC-BY).
                 {%- elif refDataConditionsAUuid == uuids.refDataConditionsOtherAUuid -%}
                   {%- set refDataConditionsOtherPath = [refDataConditionsPath, uuids.refDataConditionsOtherAUuid, uuids.refDataConditionsOtherQUuid]|reply_path -%}
                   {%- set refDataConditionsOther = repliesMap[refDataConditionsOtherPath]|reply_str_value -%}
-                  available under specific restrictions, which we will follow in our project{{ ": " ~ refDataConditionsOther|dot if refDataConditionsOther else "." }}
+                  It is available under specific restrictions, which we will follow in our project{{ ": " ~ refDataConditionsOther|dot if refDataConditionsOther else "." }}
                 {%- endif -%}
               </li>
             {%- endif -%}
@@ -246,16 +243,15 @@
             {%- set nrefDataConditionsAUuid = repliesMap[nrefDataConditionsPath]|reply_str_value -%}
             {%- if nrefDataConditionsAUuid -%}
               <li>
-                <strong>{{ macros.integrationValue(nrefDataNameReply, uuids.nrefDataNameQUuid) }}</strong>
-                <span class="separator">&ndash;</span>
+                <div>{{ macros.integrationValue(nrefDataNameReply) }}</div>
                 {% if nrefDataConditionsAUuid == uuids.nrefDataConditionsCC0AUuid -%}
-                  freely available for any use (public domain or CC0).
+                  It is freely available for any use (public domain or CC0).
                 {%- elif nrefDataConditionsAUuid == uuids.nrefDataConditionsCCBYAUuid -%}
-                  freely available with obligation to quote the source (e.g. CC-BY).
+                  It is freely available with obligation to quote the source (e.g. CC-BY).
                 {%- elif nrefDataConditionsAUuid == uuids.nrefDataConditionsOtherAUuid -%}
                   {%- set nrefDataConditionsOtherPath = [nrefDataConditionsPath, uuids.nrefDataConditionsOtherAUuid, uuids.refDataConditionsOtherQUuid]|reply_path -%}
                   {%- set nrefDataConditionsOther = repliesMap[nrefDataConditionsOtherPath]|reply_str_value -%}
-                  available under specific restrictions, which we will follow in our project{{ ": " ~ nrefDataConditionsOther|dot if nrefDataConditionsOther else "." }}
+                  It is available under specific restrictions, which we will follow in our project{{ ": " ~ nrefDataConditionsOther|dot if nrefDataConditionsOther else "." }}
                 {%- endif -%}
               </li>
             {%- endif -%}
@@ -302,7 +298,7 @@
                     {%- set domainSpecificRepoNamePath = [distroRepositoryKindPath, uuids.publishedDataRepositoryDomainSpecificAUuid, uuids.domainSpecificRepoNameQUuid]|reply_path -%}
                     {%- set domainSpecificRepoNameReply = repliesMap[domainSpecificRepoNamePath] -%}
                     {%- if domainSpecificRepoNameReply -%}
-                      : {{ macros.integrationValue(domainSpecificRepoNameReply, uuids.domainSpecificRepoNameQUuid) }}.
+                      : {{ macros.integrationValue(domainSpecificRepoNameReply) }}.
                     {%- else -%}.
                     {% endif -%}
                     {# Contact the repository #}
@@ -397,7 +393,7 @@
                           The conditions will be published as part of open metadata.
                         {%- endif -%}
                         {% if licenseRestrictLink %}
-                          More infomation about the restrictions can be found here: <a href="{{ licenseRestrictLink }}">{{ licenseRestrictLink }}</a>.
+                          More infomation about the restrictions can be found here: <a href="{{ licenseRestrictLink }}" target="_blank">{{ licenseRestrictLink }}</a>.
                         {% endif %}
                       {%- endif -%}
                       </li>

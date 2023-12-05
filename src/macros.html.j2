@@ -18,12 +18,9 @@
 </svg></span>&nbsp;<a href="https://orcid.org/{{ orcid }}" target="_blank">{{ orcid }}</a></span>
 {%- endmacro -%}
 
-{%- macro integrationValue(reply, questionUuid) -%}
+{%- macro integrationValue(reply) -%}
   {%- if reply and reply.value.value.type == "IntegrationType" -%}
-    {%- set question = dc.e.questions[questionUuid] -%}
-    {%- set integration = question.integration -%}
-    {%- set integrationLink = integration.item(reply.value.value.id) -%}
-    <a href="{{ integrationLink }}" target="_blank">{{ reply.value.value.value|markdown }}</a>
+    {{ reply.value.value.value|markdown }}
   {%- elif reply %}
     {{ reply.value.value.value }}
   {%- endif -%}

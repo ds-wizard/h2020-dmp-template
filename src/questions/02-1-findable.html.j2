@@ -35,7 +35,7 @@
                     {%- set domainSpecificRepoNamePath = [distroRepositoryKindPath, uuids.publishedDataRepositoryDomainSpecificAUuid, uuids.domainSpecificRepoNameQUuid]|reply_path -%}
                     {%- set domainSpecificRepoNameReply = repliesMap[domainSpecificRepoNamePath] -%}
                     {%- if domainSpecificRepoNameReply -%}
-                      : {{ macros.integrationValue(domainSpecificRepoNameReply, uuids.domainSpecificRepoNameQUuid) }}.
+                      : {{ macros.integrationValue(domainSpecificRepoNameReply) }}.
                     {%- else -%}.
                     {% endif -%}
                     {# Contact the repository #}
@@ -138,7 +138,7 @@
             <p>There are the following 'Minimal Metadata About ...' (MIA...) standards for our experiments:
             <ul>
             {%- for metadataStandardReply in metadataStandardReplies -%}
-              <li>{{ macros.integrationValue(metadataStandardReply, uuids.metadataMiaWhichQUuid) }}</li>
+              <li>{{ macros.integrationValue(metadataStandardReply) }}</li>
             {%- endfor -%}
             </ul>
             </p>
