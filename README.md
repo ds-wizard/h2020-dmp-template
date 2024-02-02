@@ -1,6 +1,4 @@
-# h2020-dmp-template
-
-*H2020 DMP template for DSW*
+# H2020 DMP
 
 The template is based on the official [Template Horizon 2020 Data Management Plan (DMP) v2.0](https://ec.europa.eu/research/participants/data/ref/h2020/other/gm/reporting/h2020-tpl-oa-data-mgt-plan-annotated_en.pdf)
 
@@ -26,6 +24,10 @@ This document template for DSW is available as open-source via GitHub Repository
 
 
 ## Changelog
+
+### 1.14.0
+
+- Adjusted to template metamodel version 13 (released in DSW 4.3.0)
 
 ### 1.13.1
 
