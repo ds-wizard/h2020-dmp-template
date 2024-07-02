@@ -84,16 +84,31 @@
           {%- set versionsPath = [prefix, uuids.publishedVersionsQUuid]|reply_path %}
           {%- set versionsAUuid = repliesMap[versionsPath]|reply_str_value -%}
           {%- if versionsAUuid == uuids.publishedVersionsNoAUuid -%}
-            <br>There won't be different versions of this data over time.
-          {%- elif versionsAUuid == uuids.publishedVersionsYesAUuid -%}
+            <p>There won't be different versions of this data over time.</p>
+          {% elif versionsAUuid == uuids.publishedVersionsYesAUuid -%}
             {%- set versionsRecognizePath = [versionsPath, uuids.publishedVersionsYesAUuid, uuids.publishedVersionsRecognizeQUuid]|reply_path %}
-            {%- set versionsRecognizeAUuid = repliesMap[versionsRecognizePath]|reply_str_value -%}
-            {% if versionsRecognizeAUuid == uuids.publishedVersionsRecognizeDateAUuid -%}
-            <br>There will be different versions of this data over time; the versions will be dated.
-            {% elif versionsRecognizeAUuid == uuids.publishedVersionsRecognizeNumAUuid -%}
-            <br>There will be different versions of this data over time; the versions will be numbered.
+            {%- set versionsRecognizeItems = repliesMap[versionsRecognizePath]|reply_items -%}
+            {%- set versionsRecognize = [] -%}
+
+            {%- if uuids.publishedVersionsRecognizeDateAUuid in versionsRecognizeItems -%}
+              {%- do versionsRecognize.append("dated") -%}
             {%- endif -%}
+            {%- if uuids.publishedVersionsRecognizeNumAUuid in versionsRecognizeItems -%}
+              {%- do versionsRecognize.append("numbered") -%}
+            {%- endif -%}
+
+            <p>There will be different versions of this data over time
+            {%- if versionsRecognize|length == 0 -%}
+              .</p>
+            {% elif versionsRecognize|length == 2 -%}
+                ; the versions will be {{ versionsRecognize[0] }} and {{ versionsRecognize[1] }}.</p>
+            {% elif versionsRecognize|length == 1 -%}
+               ; the versions will be {{ versionsRecognize[0] }}.</p>
+            {% endif %}
+
           {%- endif -%}
+
+
           {# Catalogue #}
           {%- set publishedDataCataloguePath = [prefix, uuids.publishedDataCatalogueQUuid]|reply_path -%}
           {%- set publishedDataCatalogueAUuid = repliesMap[publishedDataCataloguePath]|reply_str_value -%}
