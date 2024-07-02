@@ -84,7 +84,7 @@
           {%- set versionsPath = [prefix, uuids.publishedVersionsQUuid]|reply_path %}
           {%- set versionsAUuid = repliesMap[versionsPath]|reply_str_value -%}
           {%- if versionsAUuid == uuids.publishedVersionsNoAUuid -%}
-            <p>There won't be different versions of this data over time.</p>
+            <br>There won't be different versions of this data over time.
           {% elif versionsAUuid == uuids.publishedVersionsYesAUuid -%}
             {%- set versionsRecognizePath = [versionsPath, uuids.publishedVersionsYesAUuid, uuids.publishedVersionsRecognizeQUuid]|reply_path %}
             {%- set versionsRecognizeItems = repliesMap[versionsRecognizePath]|reply_items -%}
@@ -97,14 +97,14 @@
               {%- do versionsRecognize.append("numbered") -%}
             {%- endif -%}
 
-            <p>There will be different versions of this data over time
+            <br>There will be different versions of this data over time
             {%- if versionsRecognize|length == 0 -%}
-              .</p>
-            {% elif versionsRecognize|length == 2 -%}
-                ; the versions will be {{ versionsRecognize[0] }} and {{ versionsRecognize[1] }}.</p>
-            {% elif versionsRecognize|length == 1 -%}
-               ; the versions will be {{ versionsRecognize[0] }}.</p>
-            {% endif %}
+              .
+            {%- elif versionsRecognize|length == 2 -%}
+                ; the versions will be {{ versionsRecognize[0] }} and {{ versionsRecognize[1] }}.
+            {%- elif versionsRecognize|length == 1 -%}
+               ; the versions will be {{ versionsRecognize[0] }}.
+            {%- endif -%}
 
           {%- endif -%}
 
