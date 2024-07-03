@@ -85,7 +85,7 @@
                 {
                     "name": "jinja",
                     "options": {
-                        "template": "src/index.html.j2",
+                        "template": "src/word/index.html.j2",
                         "content-type": "text/html",
                         "extension": "html"
                     }
@@ -94,7 +94,8 @@
                     "name": "pandoc",
                     "options": {
                         "from": "html",
-                        "to": "docx"
+                        "to": "docx",
+                        "args": "--filter=pandoc-docx-pagebreakpy --reference-doc=src/word/reference.docx"
                     }
                 }
             ]
