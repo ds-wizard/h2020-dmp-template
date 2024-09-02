@@ -158,8 +158,8 @@
   {%- endif -%}
 
   {# People #}
-  {%- if ctx.createdBy %}
-    <p>{{ctx.createdBy.firstName}} {{ctx.createdBy.lastName}} is responsible for implementing the DMP, and ensuring it is reviewed and revised.</p>
+  {%- if ctx.questionnaire.createdBy %}
+    <p>{{ctx.questionnaire.createdBy.firstName}} {{ctx.questionnaire.createdBy.lastName}} is responsible for implementing the DMP, and ensuring it is reviewed and revised.</p>
   {%- endif -%}
 
   {%- set contributorsPath = [uuids.adminDetailsCUuid, uuids.contributorsQUuid]|reply_path -%}
