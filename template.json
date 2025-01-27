@@ -1,7 +1,7 @@
 {
     "templateId": "h2020-dmp",
     "organizationId": "dsw",
-    "version": "1.18.0",
+    "version": "1.19.0",
     "name": "Horizon 2020 DMP",
     "description": "Data Management Plan according to the H2020 template",
     "license": "Apache-2.0",
