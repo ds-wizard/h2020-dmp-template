@@ -30,7 +30,7 @@ This document template for DSW is available as open-source via GitHub Repository
 ### 1.20.0
 
 - Added ORCID Integration
-= Added compatible knowledge models to README
+- Added compatible knowledge models to README
 
 ### 1.19.0
 
