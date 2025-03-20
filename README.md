@@ -1,6 +1,6 @@
 # H2020 DMP
 
-The template is based on the official [Template Horizon 2020 Data Management Plan (DMP) v2.0](https://ec.europa.eu/research/participants/data/ref/h2020/other/gm/reporting/h2020-tpl-oa-data-mgt-plan-annotated_en.pdf)
+The template is based on the official [Template Horizon 2020 Data Management Plan (DMP) v2.0](https://ec.europa.eu/research/participants/data/ref/h2020/other/gm/reporting/h2020-tpl-oa-data-mgt-plan-annotated_en.pdf) designed for use in [Data Stewardship Wizard](https://ds-wizard.org) with [*Common Data Stewardship knowledge model*](https://registry.ds-wizard.org/knowledge-models/dsw:root:latest) and [*Life Sciences DSW Knowledge Model*](https://registry.ds-wizard.org/knowledge-models/dsw:lifesciences:latest).
 
 
 ## Usage
@@ -26,6 +26,11 @@ This document template for DSW is available as open-source via GitHub Repository
   * GitHub: [@jmartinkova](https://github.com/jmartinkova)
 
 ## Changelog
+
+### 1.20.0
+
+- Added ORCID Integration
+- Added compatible knowledge models to README
 
 ### 1.19.0
 
