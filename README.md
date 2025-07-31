@@ -27,6 +27,10 @@ This document template for DSW is available as open-source via GitHub Repository
 
 ## Changelog
 
+### 1.21.0
+
+- Added "General-purpose repository" option to repository type descriptions
+
 ### 1.20.0
 
 - Added ORCID Integration
