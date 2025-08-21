@@ -27,6 +27,11 @@ This document template for DSW is available as open-source via GitHub Repository
 
 ## Changelog
 
+### 1.22.0
+
+- Adjusted to template metamodel version 17.0 (released in DSW 4.22.0)
+- Fixed typos
+
 ### 1.21.0
 
 - Added "General-purpose repository" option to repository type descriptions
@@ -42,7 +47,7 @@ This document template for DSW is available as open-source via GitHub Repository
 
 ### 1.18.0
 
-- Adjusted to template metamodel version 16 (released in DSW 4.12.0)
+- Adjusted to template metamodel version 16 (released in DSW 4.13.0)
 
 ### 1.17.0
 
