@@ -159,7 +159,7 @@
               {%- set refDataWhere = repliesMap[[refDataPrefix, uuids.refDataWhereQUuid]|reply_path]|reply_str_value -%}
               <li>
                 {# identification #}
-                <div>{{ macros.integrationValue(refDataNameReply) }}</div>
+                <div>{{ macros.integrationFairSharing(refDataNameReply) }}</div>
                 {%- if refDataWhere -%}
                   <p>
                   {%- if refDataWhere.startswith("http://") or refDataWhere.startswith("https://") or refDataWhere.startswith("ftp://") %}
@@ -206,7 +206,7 @@
               {%- set nrefDataWhere = repliesMap[[nrefDataPrefix, uuids.nrefDataWhereQUuid]|reply_path]|reply_str_value -%}
               <li>
                 {# identification #}
-                <div>{{ macros.integrationValue(nrefDataNameReply) }}</div>
+                <div>{{ macros.integrationFairSharing(nrefDataNameReply) }}</div>
                 {%- if nrefDataWhere -%}
                   <p>
                   {%- if nrefDataWhere.startswith("http://") or nrefDataWhere.startswith("https://") or nrefDataWhere.startswith("ftp://") %}
@@ -260,7 +260,7 @@
               {%- set nrefDataWhere = repliesMap[[nrefDataPrefix, uuids.nrefDataWhereQUuid]|reply_path]|reply_str_value -%}
               <li>
                 {# identification #}
-                <div>{{ macros.integrationValue(nrefDataNameReply) }}</div>
+                <div>{{ macros.integrationFairSharing(nrefDataNameReply) }}</div>
                 {%- if nrefDataWhere -%}
                   <p>
                   {%- if nrefDataWhere.startswith("http://") or nrefDataWhere.startswith("https://") or nrefDataWhere.startswith("ftp://") %}
@@ -315,7 +315,7 @@
         {%- set formatsVolumeAUuid = repliesMap[formatsVolumePath]|reply_str_value -%}
         <li>
           {# identification #}
-          <div>{{ macros.integrationValue(formatNameReply) }}</div>
+          <div>{{ macros.integrationFairSharing(formatNameReply) }}</div>
           {%- if formatsIsStandardAUuid or formatsIsLTSuitableAUuid or formatsVolumeAUuid -%}
             <p>
             {# standard? #}
