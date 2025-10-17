@@ -27,6 +27,10 @@ This document template for DSW is available as open-source via GitHub Repository
 
 ## Changelog
 
+### 1.25.0
+
+- Fix non-equipment datasets utility
+
 ### 1.24.0
 
 - Update dependency on KM to 2.6.13
