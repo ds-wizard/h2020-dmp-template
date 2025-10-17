@@ -120,11 +120,11 @@
   {%- set coldStorageAfter = coldStorageAfterAUuid == uuids.coldStorageAfterYesAUuid -%}
 
   {%- if coldStorageDuring and coldStorageAfter -%}
-    <p>We will be archiving data (using so-called 'cold storage') for long term preservation after the project but also already during the project.</p>
+    <p>We will be archiving data in <em>cold storage</em> systems for long-term preservation after the project but also already during the project.</p>
   {%- elif coldStorageDuring -%}
-    <p>We will be archiving data (using so-called 'cold storage') for long term preservation already during the project.</p>
+    <p>We will be archiving data in <em>cold storage</em> systems for long-term preservation already during the project.</p>
   {%- elif coldStorageAfter -%}
-    <p>We will be archiving data (using so-called 'cold storage') for long term preservation after the project.</p>
+    <p>We will be archiving data in <em>cold storage</em> systems for long-term preservation after the project.</p>
   {%- endif -%}
   
   {# Repository charges #}
