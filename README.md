@@ -30,6 +30,7 @@ This document template for DSW is available as open-source via GitHub Repository
 ### 1.25.0
 
 - Fix non-equipment datasets utility
+- Improve text
 
 ### 1.24.0
 
