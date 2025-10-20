@@ -256,7 +256,7 @@
         {%- set metadataFilenamesPath = [prefix, uuids.metadataFilenamesQUuid]|reply_path -%}
         {%- set metadataFilenamesAUuid = repliesMap[metadataFilenamesPath]|reply_str_value -%}
         {%- if metadataFilenamesAUuid == uuids.metadataFilenamesYesAUuid -%}
-          {%- do sentences.append("All the metadata in the file names also will be available in the proper metadata.") -%}
+          {%- do sentences.append("All metadata contained in the file names will also be included in the corresponding metadata records.") -%}
         {%- endif -%}
         {%- if sentences|length > 0 -%}
           <p>{{ sentences|join(' ') }}</p>
