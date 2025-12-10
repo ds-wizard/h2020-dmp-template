@@ -30,6 +30,7 @@ This document template for DSW is available as open-source via GitHub Repository
 ### 1.25.1
 
 - Fixed rendering risks
+- Improved qualified references part
 
 ### 1.25.0
 
