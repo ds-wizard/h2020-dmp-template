@@ -155,11 +155,16 @@
             {%- for refDataItem in refDataItems -%}
               {%- set refDataPrefix = [refDataPath, refDataItem]|reply_path -%}
               {%- set refDataUsedPrefix = [refDataPrefix, uuids.refDataUseQUuid, uuids.refDataUseYesAUuid]|reply_path -%}
-              {%- set refDataNameReply = repliesMap[[refDataPrefix, uuids.refDataNameQUuid]|reply_path] -%}
+              {%- set refDataNamePath = [refDataPrefix, uuids.refDataNameQUuid]|reply_path -%}
+              {%- set refDataNameReply = repliesMap[refDataNamePath]|reply_str_value  -%}
               {%- set refDataWhere = repliesMap[[refDataPrefix, uuids.refDataWhereQUuid]|reply_path]|reply_str_value -%}
               <li>
                 {# identification #}
-                <div>{{ macros.integrationFairSharing(refDataNameReply) }}</div>
+                {%- if refDataNameReply -%}
+                  <div>{{ refDataNameReply }}</div>
+                {%- else -%}
+                  <div>(no name given)</div>
+                {%- endif -%}
                 {%- if refDataWhere -%}
                   <p>
                   {%- if refDataWhere.startswith("http://") or refDataWhere.startswith("https://") or refDataWhere.startswith("ftp://") %}
@@ -202,11 +207,15 @@
           <ul>
             {%- for nrefDataItem in nrefDataItems -%}
               {%- set nrefDataNamePath = [nrefDataPath, nrefDataItem, uuids.nrefDataNameQUuid]|reply_path -%}
-              {%- set nrefDataNameReply = repliesMap[nrefDataNamePath] -%}
+              {%- set nrefDataNameReply = repliesMap[nrefDataNamePath]|reply_str_value -%}
               {%- set nrefDataWhere = repliesMap[[nrefDataPrefix, uuids.nrefDataWhereQUuid]|reply_path]|reply_str_value -%}
               <li>
                 {# identification #}
-                <div>{{ macros.integrationFairSharing(nrefDataNameReply) }}</div>
+                {%- if nrefDataNameReply -%}
+                  <div>{{ nrefDataNameReply }}</div>
+                {%- else -%}
+                  <div>(no name given)</div>
+                {%- endif -%}
                 {%- if nrefDataWhere -%}
                   <p>
                   {%- if nrefDataWhere.startswith("http://") or nrefDataWhere.startswith("https://") or nrefDataWhere.startswith("ftp://") %}
@@ -256,11 +265,15 @@
               {%- set nrefDataPrefix = [nrefDataPath, nrefDataItem]|reply_path -%}
               {%- set nrefDataUsedPrefix = [nrefDataPrefix, uuids.nrefDataUseQUuid, uuids.nrefDataUseYesAUuid]|reply_path -%}
               {%- set nrefDataNamePath = [nrefDataPrefix, uuids.nrefDataNameQUuid]|reply_path -%}
-              {%- set nrefDataNameReply = repliesMap[nrefDataNamePath] -%}
+              {%- set nrefDataNameReply = repliesMap[nrefDataNamePath]|reply_str_value -%}
               {%- set nrefDataWhere = repliesMap[[nrefDataPrefix, uuids.nrefDataWhereQUuid]|reply_path]|reply_str_value -%}
               <li>
                 {# identification #}
-                <div>{{ macros.integrationFairSharing(nrefDataNameReply) }}</div>
+                {%- if nrefDataNameReply -%}
+                  <div>{{ nrefDataNameReply }}</div>
+                {%- else -%}
+                  <div>(no name given)</div>
+                {%- endif -%}
                 {%- if nrefDataWhere -%}
                   <p>
                   {%- if nrefDataWhere.startswith("http://") or nrefDataWhere.startswith("https://") or nrefDataWhere.startswith("ftp://") %}
