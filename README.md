@@ -34,6 +34,7 @@ This document template for DSW is available as open-source via GitHub Repository
 - Improved qualified references part
 - Fixed rendering risks
 - Fixed rendering reused datasets conditions
+- Fixed the published dataset to reflect future-oriented statement
 
 ### 1.25.0
 
