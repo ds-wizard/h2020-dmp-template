@@ -29,7 +29,7 @@ This document template for DSW is available as open-source via GitHub Repository
 
 ### 1.26.1
 
-- Updated metamodel version to 17.1
+- Adjust to template metamodel version 17.1 (released in DSW 4.26.0)
 
 ### 1.26.0
 
