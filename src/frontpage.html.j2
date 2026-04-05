@@ -1,7 +1,7 @@
 <header>
   <p class="dmp"></p>
   <h1>
-    {{ dc.qtn.name }}
+    {{ dc.project.name }}
   </h1>
   <h3>
     Following the <strong>Horizon 2020 DMP Template v2.0</strong>
@@ -102,7 +102,7 @@
           {%- endif -%}
         </dd>
 
-      {% for version in dc.qtn.versions if version.uuid == dc.qtn.version %}
+      {% for version in dc.project.versions if version.uuid == dc.project.version %}
       <dt>Version</dt>
       <dd>{{version.name}} ({{ version.created_at|datetime_format("%d %b %Y %H:%M:%S") }} UTC)</dd>
       {% endfor %}
