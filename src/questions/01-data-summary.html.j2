@@ -42,7 +42,7 @@
                   {%- set mdExternalOwnershipOtherPath = [mdExternalOwnershipPath, uuids.mdExternalOwnershipOtherAUuid, uuids.mdExternalOwnershipOtherQUuid]|reply_path -%}
                   {%- set mdExternalOwnershipOther = repliesMap[mdExternalOwnershipOtherPath]|reply_str_value -%}
                   {%- if mdExternalOwnershipOther -%}
-                    For the ownership of the data we have made the following arrangements: {{ mdExternalOwnershipOther|dot }}
+                    For the ownership of the data we have made the following arrangements: {{ mdExternalOwnershipOther|markdown }}
                   {%- endif -%}
                 {%- endif -%}
               </p>
@@ -61,7 +61,7 @@
             {%- elif mdDataUtilityAUuid == uuids.mdDataUtilityOtherFieldsAUuid -%}
               {%- set mdDataUtilityOtherFieldsHowPath = [mdDataUtilityPath, uuids.mdDataUtilityOtherFieldsAUuid, uuids.mdDataUtilityOtherFieldsHowQUuid]|reply_path -%}
               {%- set mdDataUtilityOtherFieldsHow = repliesMap[mdDataUtilityOtherFieldsHowPath]|reply_str_value -%}
-              <p>Researchers working in other fields of research could be interested in using this data. {% if mdDataUtilityOtherFieldsHow -%}{{ mdDataUtilityOtherFieldsHow|capitalize|dot }}{%- endif -%}</p>
+              <p>Researchers working in other fields of research could be interested in using this data. {% if mdDataUtilityOtherFieldsHow -%}{{ mdDataUtilityOtherFieldsHow|capitalize|markdown }}{%- endif -%}</p>
             {%- endif -%}
           </li>
         {%- endfor -%}
@@ -119,7 +119,7 @@
             {%- set neqDataUtilityAUuid = repliesMap[neqDataUtilityPath]|reply_str_value -%}
             <li>
               <strong>{{ neqDataSetsName if neqDataSetsName else "(no name given)" }}</strong>
-              {% if neqDataSetsDesc -%}<span class="separator">&ndash;</span> {{ neqDataSetsDesc }}{%- endif -%}
+              {% if neqDataSetsDesc -%}<span class="separator">&ndash;</span> {{ neqDataSetsDesc|markdown }}{%- endif -%}
               {# Data utility #}
               {% if neqDataUtilityAUuid == uuids.neqDataUtilityJustUsAUuid -%}
                 <p>This data are expected to be used only by us.</p>
@@ -128,7 +128,7 @@
               {%- elif neqDataUtilityAUuid == uuids.neqDataUtilityOtherFieldsAUuid -%}
                 {%- set neqDataUtilityOtherFieldsHowPath = [neqDataUtilityPath, uuids.neqDataUtilityOtherFieldsAUuid, uuids.neqDataUtilityOtherFieldsHowQUuid]|reply_path -%}
                 {%- set neqDataUtilityOtherFieldsHow = repliesMap[neqDataUtilityOtherFieldsHowPath]|reply_str_value -%}
-                <p>Researchers working in other fields of research could be interested in using this data. {% if neqDataUtilityOtherFieldsHow -%}{{ neqDataUtilityOtherFieldsHow|capitalize|dot }}{%- endif -%}</p>
+                <p>Researchers working in other fields of research could be interested in using this data. {% if neqDataUtilityOtherFieldsHow -%}{{ neqDataUtilityOtherFieldsHow|capitalize|markdown }}{%- endif -%}</p>
               {%- endif -%}
             </li>
           {%- endfor -%}
@@ -185,7 +185,7 @@
                   {%- if refDataVersionedWhich or refDataVersionedChangeAUuid  %}
                     <p>
                     {% if refDataVersionedWhich -%}
-                      We will use version "{{ refDataVersionedWhich }}" of this dataset.
+                      We will use the following version of this dataset: {{ refDataVersionedWhich|markdown }}
                     {%- endif -%}
                     {%- if refDataVersionedChangeAUuid == uuids.refDataVersionedChangeStayAUuid %}
                       If a new version becomes available during the project, we will stay with the old version.
@@ -197,6 +197,11 @@
                     </p>
                   {%- endif -%}
                 {%- endif -%}
+                {# data use #}
+                {%- set dataUse = repliesMap[[refDataUsedPrefix, uuids.refDataUsageQUuid]|reply_path]|reply_str_value -%}
+                {%- if dataUse -%}
+                <p>We will use the dataset as follows: {{ dataUse|markdown }}</p>
+                {%- endif -%}
               </li>
             {%- endfor -%}
           </ul>
@@ -206,7 +211,9 @@
           <div>We identified the following non-reference datasets considered for potential re-use:
           <ul>
             {%- for nrefDataItem in nrefDataItems -%}
-              {%- set nrefDataNamePath = [nrefDataPath, nrefDataItem, uuids.nrefDataNameQUuid]|reply_path -%}
+              {%- set nrefDataPrefix = [nrefDataPath, nrefDataItem]|reply_path -%}
+              {%- set nrefDataUsedPrefix = [nrefDataPrefix, uuids.nrefDataUseQUuid, uuids.nrefDataUseYesAUuid]|reply_path -%}
+              {%- set nrefDataNamePath = [nrefDataPrefix, uuids.nrefDataNameQUuid]|reply_path -%}
               {%- set nrefDataNameReply = repliesMap[nrefDataNamePath]|reply_str_value -%}
               {%- set nrefDataWhere = repliesMap[[nrefDataPrefix, uuids.nrefDataWhereQUuid]|reply_path]|reply_str_value -%}
               <li>
@@ -248,41 +255,6 @@
                     </p>
                   {%- endif -%}
                 {%- endif -%}
-                {# data use #}
-                {%- set dataUse = repliesMap[[refDataUsedPrefix, uuids.refDataUsageQUuid]|reply_path]|reply_str_value -%}
-                {%- if dataUse -%}
-                <p>We will use the dataset as follows: {{ dataUse|dot }}</p>
-                {%- endif -%}
-              </li>
-            {%- endfor -%}
-          </ul>
-          </div>
-        {%- endif -%}
-        {%- if usedNRefDataItems|length > 0 -%}
-          <div>We will use the following already existing non-reference datasets:
-          <ul>
-            {%- for nrefDataItem in usedNRefDataItems -%}
-              {%- set nrefDataPrefix = [nrefDataPath, nrefDataItem]|reply_path -%}
-              {%- set nrefDataUsedPrefix = [nrefDataPrefix, uuids.nrefDataUseQUuid, uuids.nrefDataUseYesAUuid]|reply_path -%}
-              {%- set nrefDataNamePath = [nrefDataPrefix, uuids.nrefDataNameQUuid]|reply_path -%}
-              {%- set nrefDataNameReply = repliesMap[nrefDataNamePath]|reply_str_value -%}
-              {%- set nrefDataWhere = repliesMap[[nrefDataPrefix, uuids.nrefDataWhereQUuid]|reply_path]|reply_str_value -%}
-              <li>
-                {# identification #}
-                {%- if nrefDataNameReply -%}
-                  <div>{{ nrefDataNameReply }}</div>
-                {%- else -%}
-                  <div>(no name given)</div>
-                {%- endif -%}
-                {%- if nrefDataWhere -%}
-                  <p>
-                  {%- if nrefDataWhere.startswith("http://") or nrefDataWhere.startswith("https://") or nrefDataWhere.startswith("ftp://") %}
-                    It is available via: <a href="{{ nrefDataWhere }}" target="_blank">{{ nrefDataWhere }}</a>.
-                  {%- else %}
-                    It is available via: {{ nrefDataWhere }}.
-                  {%- endif -%}
-                  </p>
-                {%- endif -%}
                 {# data access #}
                 {%- set nrefDataAccessPath = [nrefDataUsedPrefix, uuids.nrefDataAccessQUuid]|reply_path -%}
                 {%- set nrefDataAccessAUuid = repliesMap[nrefDataAccessPath]|reply_str_value -%}
@@ -300,7 +272,7 @@
                 {# data use #}
                 {%- set dataUse = repliesMap[[nrefDataUsedPrefix, uuids.nrefDataUsageQUuid]|reply_path]|reply_str_value -%}
                 {%- if dataUse -%}
-                <p>We will use the dataset as follows: {{ dataUse|dot }}</p>
+                <p>We will use the dataset as follows: {{ dataUse|markdown }}</p>
                 {%- endif -%}
               </li>
             {%- endfor -%}

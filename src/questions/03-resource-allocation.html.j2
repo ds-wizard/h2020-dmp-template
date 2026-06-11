@@ -145,7 +145,7 @@
       {%- set repoChargesHowPayOtherPath = [repoChargesHowPayPath, uuids.repoChargesHowPayOtherAUuid, uuids.repoChargesHowPayOtherQUuid]|reply_path -%}
       {%- set repoChargesHowPayOther = repliesMap[repoChargesHowPayOtherPath]|reply_str_value -%}
       {%- if repoChargesHowPayOther -%}
-        <p>We will carry the costs related to the used repositories by: {{ repoChargesHowPayOther|dot }}</p>
+        <p>We will carry the costs related to the used repositories by: {{ repoChargesHowPayOther|markdown }}</p>
       {%- endif -%}
     {%- endif -%}
   {%- endif -%}
@@ -212,8 +212,8 @@
       To execute the DMP, additional specialist expertise is required. We will be training existing staff.
       {%- set expertiseTrainPath = [expertisePath, uuids.additionalExpertiseYesTrainAUuid, uuids.additionalExpertiseYesTrainTrainingQUuid]|reply_path -%}
       {%- set expertiseTrainText = repliesMap[expertiseTrainPath]|reply_str_value -%}
-      {%- if additionalExpertiseTrainText %}
-        The training will be: {{ expertiseTrainText|dot }}
+      {%- if expertiseTrainText %}
+        The training will be: {{ expertiseTrainText|markdown }}
       {%- endif -%}
     </p>
   {%- elif expertiseAUuid == uuids.additionalExpertiseYesHireAUuid -%}
@@ -235,7 +235,7 @@
     {%- set additionalHWSWWhatPath = [additionalHWSWPath, uuids.additionalHWSWYesAUuid, uuids.additionalHWSWYesWhatQUuid]|reply_path -%}
     {%- set additionalHWSWWhat = repliesMap[additionalHWSWWhatPath]|reply_str_value -%}
     {%- if additionalHWSWWhat -%}
-      <p>We require the following hardware or software in addition to what is usually available in the institute: {{ additionalHWSWWhat|dot }}</p>
+      <p>We require the following hardware or software in addition to what is usually available in the institute: {{ additionalHWSWWhat|markdown }}</p>
     {%- else -%}
       <p>We require hardware or software in addition to what is usually available in the institute.</p>
     {%- endif -%}
