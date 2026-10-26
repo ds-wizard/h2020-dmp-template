@@ -5,7 +5,7 @@
     "name": "Horizon 2020 DMP",
     "description": "Data Management Plan according to the H2020 template",
     "license": "Apache-2.0",
-    "metamodelVersion": "18.0",
+    "metamodelVersion": "18.3",
     "allowedPackages": [
         {
             "orgId": "dsw",
@@ -130,5 +130,6 @@
             "src/*",
             "src/**/*"
         ]
-    }
+    },
+    "language": "en"
 }
