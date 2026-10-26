@@ -21,9 +21,7 @@
           {# Distributions #}
           {% set distrosPath = [prefix, uuids.publishedDistrosQUuid]|reply_path -%}
           {%- set distrosItems = repliesMap[distrosPath]|reply_items -%}
-          {%- if distrosItems|length > 0 -%}
-            <br>The distributions will be stored in:
-            <ul>
+          {%- set distrosList -%}
             {%- for j in distrosItems -%}
               {%- set distroPrefix = [distrosPath, j]|reply_path -%}
               {%- set distroRepositoryKindPath = [distroPrefix, uuids.publishedDataRepositoryKindQUuid]|reply_path -%}
@@ -76,7 +74,7 @@
                     {%- set specialRepoServiceLevelPath = [distroRepositoryKindPath, uuids.publishedDataRepositorySpecialAUuid, uuids.specialRepoServiceLevelQUuid]|reply_path -%}
                     {%- set specialRepoServiceLevelAUuid = repliesMap[specialRepoServiceLevelPath]|reply_str_value -%}
                     {%- if specialRepoServiceLevelAUuid == uuids.specialRepoServiceLevelDownloadAUuid %}
-                      The repository will provide download-only service.
+                      The repository will provide a download-only service.
                     {%- elif specialRepoServiceLevelAUuid == uuids.specialRepoServiceLevelSimpleAUuid %}
                       The repository will provide a search and simple access interface.
                     {%- elif specialRepoServiceLevelAUuid == uuids.specialRepoServiceLevelAdvancedAUuid %}
@@ -86,7 +84,10 @@
                 </li>
               {%- endif -%}
             {%- endfor -%}
-            </ul>
+          {%- endset -%}
+          {%- if distrosList|trim -%}
+            <br>The distributions will be stored in:
+            <ul>{{ distrosList }}</ul>
           {%- endif -%}
           {# Version #}
           {%- set versionsPath = [prefix, uuids.publishedVersionsQUuid]|reply_path %}
@@ -141,33 +142,31 @@
         {%- set metadataMiaIdeaPath = [metadataMiaPath, uuids.metadataMiaNoAUuid, uuids.metadataMiaIdeaQUuid]|reply_path -%}
         {%- set metadataMiaIdeaAUuid = repliesMap[metadataMiaIdeaPath]|reply_str_value -%}
         {%- if metadataMiaIdeaAUuid == uuids.metadataMiaIdeaYesAUuid -%}
-          <p>There are no 'Minimal Metadata About ...' (MIA...) standards for our experiments. However, we have a good idea of what metadata is needed to make it possible for others to read and interpret your data in the future.</p>
+          <p>There are no 'Minimal Metadata About ...' (MIA...) standards for our experiments. However, we have a good idea of what metadata is needed to make it possible for others to read and interpret our data in the future.</p>
         {%- endif -%}
       {%- elif metadataMiaAUuid == uuids.metadataMiaYesAUuid -%}
         {%- set metadataMiaListPath = [metadataMiaPath, uuids.metadataMiaYesAUuid, uuids.metadataMiaListQUuid]|reply_path -%}
         {%- set metadataMiaListItems = repliesMap[metadataMiaListPath]|reply_items -%}
         
         {%- set metadataStandardReplies = [] -%}
-          {%- for metadataMiaItem in metadataMiaListItems -%}
-            {%- set itemPrefix = [metadataMiaListPath, metadataMiaItem]|reply_path -%}
-            {%- set metadataMiaWhichPath = [itemPrefix, uuids.metadataMiaWhichQUuid]|reply_path -%}
-            {%- set metadataMiaWhichReply = repliesMap[metadataMiaWhichPath] -%}
-              {%- if metadataMiaWhichReply -%}
-                {%- do metadataStandardReplies.append(metadataMiaWhichReply) -%}
-              {%- endif -%}
-          {%- endfor -%}
-          
-          {%- if metadataStandardReplies|length > 0 -%}
-            <p>There are the following 'Minimal Metadata About ...' (MIA...) standards for our experiments:
-            <ul>
-            {%- for metadataStandardReply in metadataStandardReplies -%}
-              <li>{{ macros.integrationFairSharing(metadataStandardReply) }}</li>
-            {%- endfor -%}
-            </ul>
-            </p>
-          {%- else -%}
-            <p>There are 'Minimal Metadata About ...' (MIA...) standards for our experiments.</p>
+        {%- for metadataMiaItem in metadataMiaListItems -%}
+          {%- set itemPrefix = [metadataMiaListPath, metadataMiaItem]|reply_path -%}
+          {%- set metadataMiaWhichPath = [itemPrefix, uuids.metadataMiaWhichQUuid]|reply_path -%}
+          {%- set metadataMiaWhichReply = repliesMap[metadataMiaWhichPath] -%}
+          {%- if metadataMiaWhichReply -%}
+            {%- do metadataStandardReplies.append(metadataMiaWhichReply) -%}
           {%- endif -%}
+        {%- endfor -%}
+        {%- if metadataStandardReplies|length > 0 -%}
+          <p>There are the following 'Minimal Metadata About ...' (MIA...) standards for our experiments:</p>
+          <ul>
+          {%- for metadataStandardReply in metadataStandardReplies -%}
+            <li>{{ macros.integrationFairSharing(metadataStandardReply) }}</li>
+          {%- endfor -%}
+          </ul>
+        {%- else -%}
+          <p>There are 'Minimal Metadata About ...' (MIA...) standards for our experiments.</p>
+        {%- endif -%}
       {%- endif -%}
       {# Metadata #}
       {# Good provenance (lab notebooks) #}
@@ -180,42 +179,39 @@
       {%- elif provenanceAUuid == uuids.provenanceOtherAUuid -%}
         {%- set provenanceOtherPath = [provenancePath, uuids.provenanceOtherAUuid, uuids.provenanceOtherQUuid]|reply_path -%}
         {%- set provenanceOther = repliesMap[provenanceOtherPath]|reply_str_value -%}
-        <p>We will use other solution than (electronic) lab notebooks to make sure that there is good provenance of the data analysis{{ ": " ~ provenanceOther|markdown if provenanceOther else "." }}
+        {% call macros.para() %}We will use a solution other than (electronic) lab notebooks to make sure that there is good provenance of the data analysis{{ ": " ~ provenanceOther|markdown if provenanceOther else "." }}{% endcall %}
       {%- endif -%}
 
       {# Metadata standards #}
       {%- set metadataSentences = [] -%}
-      {%- set metadataStandardsPath = [metadataPath, uuids.metadataExploreAUuid, uuids.metadataStandardsQUuid]|reply_path -%}
+      {%- set metadataStandardsPath = [metadataPath, uuids.metadataExpAUuid, uuids.metadataStandardsQUuid]|reply_path -%}
       {%- set metadataStandardsAUuid = repliesMap[metadataStandardsPath]|reply_str_value -%}
       {%- if metadataStandardsAUuid == uuids.metadataStandardsExploreAUuid -%}
         {%- set metadataStandardsDCPath = [metadataStandardsPath, uuids.metadataStandardsExploreAUuid, uuids.metadataStandardsDCQUuid]|reply_path -%}
         {%- set metadataStandardsDCAUuid = repliesMap[metadataStandardsDCPath]|reply_str_value -%}
-        {%- set metadataStandardsDataCityPath = [metadataStandardsPath, uuids.metadataStandardsExploreAUuid, uuids.metadataStandardsDataCiteQUuid]|reply_path -%}
-        {%- set metadataStandardsDataCityAUuid = repliesMap[metadataStandardsDataCityPath]|reply_str_value -%}
+        {%- set metadataStandardsDataCitePath = [metadataStandardsPath, uuids.metadataStandardsExploreAUuid, uuids.metadataStandardsDataCiteQUuid]|reply_path -%}
+        {%- set metadataStandardsDataCiteAUuid = repliesMap[metadataStandardsDataCitePath]|reply_str_value -%}
         {%- set metadataStandardsDDIPath = [metadataStandardsPath, uuids.metadataStandardsExploreAUuid, uuids.metadataStandardsDDIQUuid]|reply_path -%}
         {%- set metadataStandardsDDIAUuid = repliesMap[metadataStandardsDDIPath]|reply_str_value -%}
         {%- set metadataStandardsKeywordsPath = [metadataStandardsPath, uuids.metadataStandardsExploreAUuid, uuids.metadataStandardsKeywordsQUuid]|reply_path -%}
         {%- set metadataStandardsKeywordsAUuid = repliesMap[metadataStandardsKeywordsPath]|reply_str_value -%}
 
-        {%- set documentDataW3CPath = [metadataStandardsPath, uuids.metadataStandardsExploreAUuid, uuids.documentDataW3CQUuid]|reply_path -%}
-        {%- set documentDataW3CAUuid = repliesMap[documentDataW3CPath]|reply_str_value -%}
-
         {%- set metadataStandards = [] -%}
         {%- if metadataStandardsDCAUuid == uuids.metadataStandardsDCYesAUuid -%}
           {%- do metadataStandards.append("Dublin Core") -%}
         {%- endif -%}
-        {%- if metadataStandardsDataCityAUuid == uuids.metadataStandardsDataCiteYesAUuid -%}
+        {%- if metadataStandardsDataCiteAUuid == uuids.metadataStandardsDataCiteYesAUuid -%}
           {%- do metadataStandards.append("DataCite") -%}
         {%- endif -%}
         {%- if metadataStandardsDDIAUuid == uuids.metadataStandardsDDIYesAUuid -%}
           {%- do metadataStandards.append("DDI (Data Documentation Initiative)") -%}
         {%- endif -%}
         {%- if metadataStandards|length == 1 -%}
-          {%- do metadataSentences.append("We will be documenting the data with " ~ metadataStandards[0] ~ " metadata standard.") -%}
+          {%- do metadataSentences.append("We will be documenting the data with the " ~ metadataStandards[0] ~ " metadata standard.") -%}
         {%- elif metadataStandards|length == 2 -%}
-          {%- do metadataSentences.append("We will be documenting the data with " ~ metadataStandards[0] ~ " and " ~ metadataStandards[1] ~ " metadata standards.") -%}
+          {%- do metadataSentences.append("We will be documenting the data with the " ~ metadataStandards[0] ~ " and " ~ metadataStandards[1] ~ " metadata standards.") -%}
         {%- elif metadataStandards|length == 3 -%}
-          {%- do metadataSentences.append("We will be documenting the data with " ~ metadataStandards[0] ~ ", " ~ metadataStandards[1] ~ ", and " ~ metadataStandards[2] ~ " metadata standards.") -%}
+          {%- do metadataSentences.append("We will be documenting the data with the " ~ metadataStandards[0] ~ ", " ~ metadataStandards[1] ~ ", and " ~ metadataStandards[2] ~ " metadata standards.") -%}
         {%- endif -%}
         {%- if metadataStandardsKeywordsAUuid == uuids.metadataStandardsKeywordsYesAUuid -%}
           {%- do metadataSentences.append("We will include keywords and relevant ontology references to optimize the possibility for discovery and potential reuse.") -%}
@@ -259,7 +255,7 @@
           {%- do sentences.append("All metadata contained in the file names will also be included in the corresponding metadata records.") -%}
         {%- endif -%}
         {%- if sentences|length > 0 -%}
-          <p>{{ sentences|join(' ') }}</p>
+          {% call macros.para() %}{{ sentences|join(' ') }}{% endcall %}
         {%- endif -%}
       {%- endif -%}
     {%- endif -%}

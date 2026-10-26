@@ -9,7 +9,7 @@
         <th>Publication date</th>
         <th>Changes</th>
       </tr>
-    <thead>
+    </thead>
     <tbody>
       {% for version in dc.project.versions|reverse %}
         <tr>
@@ -19,7 +19,7 @@
         </tr>
       {% else %}
         <tr>
-          <td colspan="3" class="no-versions">There are no named versions</tr>
+          <td colspan="3" class="no-versions">There are no named versions</td>
         </tr>
       {% endfor %}
     </tbody>

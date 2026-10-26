@@ -4,7 +4,7 @@
     {%- set producedDataPath = [uuids.preservingCUuid, uuids.producedDataQUuid]|reply_path -%}
     {%- set producedDataItems = repliesMap[producedDataPath]|reply_items -%}
     {%- if producedDataItems|length > 0 -%}
-      <p>The metadata for our produced data will be kept as follows:
+      <p>The metadata for our produced data will be kept as follows:</p>
       <ul>
       {%- for i in producedDataItems -%}
         {%- set pathPrefix = [producedDataPath, i]|reply_path -%}
@@ -32,7 +32,7 @@
             {%- elif publishedDataHowLongAUuid == uuids.publishedDataHowLongFixedAUuid -%}
               {%- set publishedDataHowLongFixedPath = [publishedDataHowLongPath, uuids.publishedDataHowLongFixedAUuid, uuids.publishedDataHowLongFixedQUuid]|reply_path -%}
               {%- set publishedDataHowLongFixed = repliesMap[publishedDataHowLongFixedPath]|reply_str_value -%}
-              <span class="separator">&ndash;</span> This data set will be kept available for a fixed period (prepaid){{ " of: " ~ publishedDataHowLongFixed|dot if publishedDataHowLongFixed else "." }}
+              <span class="separator">&ndash;</span> This data set will be kept available for a fixed period (prepaid){{ " of " ~ publishedDataHowLongFixed|trim|dot if publishedDataHowLongFixed else "." }}
             {%- endif -%}
             {%- if publishedDataMetadataPersistentAUuid == uuids.publishedDataMetadataPersistentYesAUuid %}
               <span class="separator">&ndash;</span> The metadata will be available even when the data no longer exists.
@@ -41,7 +41,6 @@
         </li>
       {%- endfor -%}
       </ul>
-      </p>
     {%- endif -%}
 
     {# Can open data #}
@@ -68,8 +67,8 @@
           {%- set legalPrivacyAggrPath = [legalPrivacyPath, uuids.legalPrivacyYesAUuid, uuids.legalPrivacyAggrQUuid]|reply_path -%}
           {%- set legalPrivacyAggrAUuid = repliesMap[legalPrivacyAggrPath]|reply_str_value -%}
 
-          {%- if legalPrivacyWhereAUuid == uuids.legalPrivacyNoAUuid -%}
-            {%- do notOpenSentences.append("There are no restrictions on where the data need to be stored related to the privacy reasons.") -%}
+          {%- if legalPrivacyWhereAUuid == uuids.legalPrivacyWhereNoAUuid -%}
+            {%- do notOpenSentences.append("There are no restrictions on where the data need to be stored for privacy reasons.") -%}
           {%- elif legalPrivacyWhereAUuid == uuids.legalPrivacyEuAUuid -%}
             {%- do notOpenSentences.append("Due to privacy reasons, the data must stay in the EU.") -%}
           {%- elif legalPrivacyWhereAUuid == uuids.legalPrivacyCountryAUuid -%}
@@ -103,13 +102,13 @@
             {%- do notOpenSentences.append("We can use " ~ privacyCanUse[0] ~ ", " ~ privacyCanUse[1] ~ ", and " ~ privacyCanUse[2] ~ " to make the data more openly available.") -%}
           {%- endif -%}
 
-          {%- set privacyCannotUseStart = "We cannot use " if privacyCanUse|length == 0 else "But we cannot use " -%}
+          {%- set privacyCannotUseStart = "We can use " if privacyCanUse|length == 0 else "But we can use " -%}
           {%- if privacyCannotUse|length == 1 -%}
-            {%- do notOpenSentences.append(privacyCannotUseStart ~ privacyCannotUse[0] ~ " to make the data more openly available.") -%}
+            {%- do notOpenSentences.append(("We cannot use " if privacyCanUse|length == 0 else "But we cannot use ") ~ privacyCannotUse[0] ~ " to make the data more openly available.") -%}
           {%- elif privacyCannotUse|length == 2 -%}
             {%- do notOpenSentences.append(privacyCannotUseStart ~ "neither " ~ privacyCannotUse[0] ~ " nor " ~ privacyCannotUse[1] ~ " to make the data more openly available.") -%}
           {%- elif privacyCannotUse|length == 3 -%}
-            {%- do notOpenSentences.append(privacyCannotUseStart ~ "neither " ~ privacyCannotUse[0] ~ " nor " ~ privacyCannotUse[1] ~ ", nor " ~ privacyCannotUse[2] ~ " to make the data more openly available.") -%}
+            {%- do notOpenSentences.append(privacyCannotUseStart ~ "neither " ~ privacyCannotUse[0] ~ ", " ~ privacyCannotUse[1] ~ ", nor " ~ privacyCannotUse[2] ~ " to make the data more openly available.") -%}
           {%- endif -%}
 
           {%- if legalPrivacyPseudoAUuid == uuids.legalPrivacyPseudoYesAUuid -%}
@@ -126,7 +125,7 @@
           {%- set personalDataManagedAccessQUuid = [legalPrivacyPath, uuids.legalPrivacyYesAUuid, uuids.notOpenLegalReasonsPrivacyAccessQUuid ]|reply_path -%}
           {%- set personalDataManagedAccessReply = repliesMap[personalDataManagedAccessQUuid]|reply_str_value -%}
           {%- if personalDataManagedAccessReply -%}
-            <p>There is a procedure for users to access private data as follows: {{personalDataManagedAccessReply|dot}}</p>
+            {% call macros.para() %}There is a procedure for users to access private data as follows: {{ personalDataManagedAccessReply|trim|dot }}{% endcall %}
           {%- endif -%}
 
         {%- endif -%}
@@ -134,9 +133,9 @@
         {%- set legalIpPath = [notOpenLegalReasonsPath, uuids.notOpenLegalReasonsYesAUuid, uuids.legalIpQUuid]|reply_path -%}
         {%- set legalIpAUuid = repliesMap[legalIpPath]|reply_str_value -%}
         {%- if legalIpAUuid == uuids.legalIpNoAUuid -%}
-          {%- do notOpenSentences.append("There are no IP reasons why our data can not be open.") -%}
+          {%- do notOpenSentences.append("There are no IP reasons why our data cannot be open.") -%}
         {%- elif legalIpAUuid == uuids.legalIpYesAUuid -%}
-          {%- do notOpenSentences.append("There are IP reasons why our data can not be open.") -%}
+          {%- do notOpenSentences.append("There are IP reasons why our data cannot be open.") -%}
         
           {%- set legalIpClearPath = [legalIpPath, uuids.legalIpYesAUuid, uuids.legalIpClearQUuid]|reply_path -%}
           {%- set legalIpClearAUuid = repliesMap[legalIpClearPath]|reply_str_value -%}
@@ -151,7 +150,9 @@
           {%- endif -%}
         {%- endif -%}
       {%- endif -%}
-      <p>{{ notOpenSentences|join(" ") }}</p>
+      {%- if notOpenSentences|length > 0 -%}
+        <p>{{ notOpenSentences|join(" ") }}</p>
+      {%- endif -%}
     {%- endif -%}
 
     {# Cold storage #}
@@ -197,13 +198,10 @@
         {%- do validateHow.append("We will run part of the data set repeatedly to catch unexpected changes in results.") -%}
       {%- endif -%}
       {%- if validateHow|length > 0 -%}
-      <p>To validate the integrity of the results, the following will be done:
-      
+      <p>To validate the integrity of the results, the following will be done:</p>
       <ul>
         {% for vh in validateHow -%}<li>{{ vh }}</li>{%- endfor -%}
       </ul>
-      
-      </p>
       {%- endif -%}
     {%- endif -%}
   </div>

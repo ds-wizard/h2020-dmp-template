@@ -82,9 +82,8 @@ header {
   position: relative;
 }
 
-header .dmp::after {
+header .dmp {
   font-size: 18pt;
-  content: 'Data Management Plan';
 }
 
 h1 {
