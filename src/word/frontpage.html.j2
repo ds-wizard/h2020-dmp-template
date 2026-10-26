@@ -1,7 +1,7 @@
 <h1>
-<strong>Horizon 2020</strong>
+{% trans %}<strong>Horizon 2020</strong>
 <br/>
-<strong>Data Management Plan</strong>
+<strong>Data Management Plan</strong>{% endtrans %}
 <br/>
 <br/>
 {% if dc.project.version %}
@@ -17,10 +17,12 @@
 <br/>
 <img
   src="{{ dc.config.logo_url }}"
-  alt="Logo"
+  alt="{{ _('Logo') }}"
   height="50"
 />
 <br/>
 <br/>
-Created in <a href="{{ dc.config.service_url }}" target="_blank">{{ dc.config.service_name }}</a>
+{%- set serviceLink -%}<a href="{{ dc.config.service_url }}" target="_blank">{{ dc.config.service_name }}</a>{%- endset %}
+{# TRANSLATORS: %(link)s is the name of the Wizard as a link #}
+{% trans link=serviceLink %}Created in {{ link }}{% endtrans %}
 </h1>
