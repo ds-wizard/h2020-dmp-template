@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Horizon 2020 DMP 2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-26 09:05+0100\n"
+"POT-Creation-Date: 2026-10-26 09:45+0100\n"
 "PO-Revision-Date: 2026-10-25 21:18+0100\n"
 "Last-Translator: Content AI Workspace (test translation)\n"
 "Language-Team: Czech\n"
@@ -102,11 +102,11 @@ msgstr[0] "%(names)s odpovídá za správu a odbornou péči o data včetně zpr
 msgstr[1] "%(names)s odpovídají za správu a odbornou péči o data včetně zpracování dat, datových politik, datových směrnic a dostupnosti dat."
 msgstr[2] "%(names)s odpovídají za správu a odbornou péči o data včetně zpracování dat, datových politik, datových směrnic a dostupnosti dat."
 
-#: src/projects.html.j2:44
+#: src/projects.html.j2:45
 msgid "(applied)"
 msgstr "(podáno)"
 
-#: src/projects.html.j2:44
+#: src/projects.html.j2:45
 msgid "(granted)"
 msgstr "(uděleno)"
 
@@ -135,7 +135,7 @@ msgstr "(název neuveden)"
 msgid "(not published)"
 msgstr "(nebude zveřejněna)"
 
-#: src/projects.html.j2:44
+#: src/projects.html.j2:45
 msgid "(planned)"
 msgstr "(plánováno)"
 
@@ -143,7 +143,7 @@ msgstr "(plánováno)"
 msgid "(project name not given)"
 msgstr "(název projektu neuveden)"
 
-#: src/projects.html.j2:44
+#: src/projects.html.j2:45
 msgid "(rejected)"
 msgstr "(zamítnuto)"
 
@@ -261,6 +261,16 @@ msgstr "Kdokoli v instituci může data číst; o oprávnění k zápisu mohou p
 msgid "Anyone in the institute has read access to the data; all project members have read/write access."
 msgstr "Kdokoli v instituci má k datům přístup pro čtení; všichni členové projektu mají přístup pro čtení i zápis."
 
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "Apr"
+msgstr "dub"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "April"
+msgstr "dubna"
+
 #: src/questions/02-4-reusable.html.j2:52
 msgid "As explained in Section 2.2, our data cannot become completely open immediately."
 msgstr "Jak je vysvětleno v oddílu 2.2, naše data se nemohou ihned stát zcela otevřenými."
@@ -268,6 +278,16 @@ msgstr "Jak je vysvětleno v oddílu 2.2, naše data se nemohou ihned stát zcel
 #: src/questions/02-4-reusable.html.j2:50
 msgid "As stated already in Section 2.2, all of our data can become completely open immediately."
 msgstr "Jak již bylo uvedeno v oddílu 2.2, všechna naše data se mohou ihned stát zcela otevřenými."
+
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "Aug"
+msgstr "srp"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "August"
+msgstr "srpna"
 
 #: src/questions/02-2-accessible.html.j2:355
 #, python-format
@@ -352,7 +372,17 @@ msgstr "Data, která vytváříme"
 msgid "Data will be released only as soon as restrictions fall away."
 msgstr "Data budou zveřejněna, jakmile omezení pominou."
 
-#: src/projects.html.j2:48
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "Dec"
+msgstr "pro"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "December"
+msgstr "prosince"
+
+#: src/projects.html.j2:49
 msgid "Did not apply for any funding yet."
 msgstr "Zatím jsme o žádné financování nežádali."
 
@@ -373,7 +403,7 @@ msgstr "Z důvodu ochrany soukromí musí data zůstat ve stejné zemi."
 msgid "Due to privacy reasons, the data must stay in the same institute."
 msgstr "Z důvodu ochrany soukromí musí data zůstat ve stejné instituci."
 
-#: src/projects.html.j2:31
+#: src/projects.html.j2:32
 msgid "End date"
 msgstr "Datum ukončení"
 
@@ -384,6 +414,16 @@ msgstr "Etická schválení"
 #: src/questions/03-resource-allocation.html.j2:4
 msgid "FAIR is a central part of our data management; it is considered at every decision in our data management plan. We use the FAIR data process ourselves to make our use of the data as efficient as possible."
 msgstr "FAIR je ústřední součástí naší správy dat; zohledňujeme jej při každém rozhodnutí v našem plánu správy dat. Proces FAIR dat používáme i sami, aby naše práce s daty byla co nejefektivnější."
+
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "Feb"
+msgstr "úno"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "February"
+msgstr "února"
 
 #: src/frontpage.html.j2:7
 msgid "Following the <strong>Horizon 2020 DMP Template v2.0</strong>"
@@ -422,7 +462,7 @@ msgstr "Volně dostupná pro jakékoli použití (volné dílo nebo CC0)."
 msgid "Freely available with obligation to quote the source (e.g. CC-BY)."
 msgstr "Volně dostupná s povinností citovat zdroj (např. CC-BY)."
 
-#: src/projects.html.j2:33
+#: src/projects.html.j2:34
 msgid "Funding"
 msgstr "Financování"
 
@@ -559,6 +599,36 @@ msgstr "Bude šifrovaný a je jasné, kdo má přístup ke klíči (i pro příp
 msgid "It will be encrypted."
 msgstr "Bude šifrovaný."
 
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "Jan"
+msgstr "led"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "January"
+msgstr "ledna"
+
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "Jul"
+msgstr "čvc"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "July"
+msgstr "července"
+
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "Jun"
+msgstr "čvn"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "June"
+msgstr "června"
+
 #: src/questions/02-2-accessible.html.j2:80
 msgid "Limited embargo cannot be used because some restricted data will be embargoed indefinitely."
 msgstr "Časově omezené embargo nelze použít, protože některá data s omezeními budou pod embargem neomezeně dlouho."
@@ -574,6 +644,26 @@ msgstr "Logo"
 #: src/questions/03-resource-allocation.html.j2:101
 msgid "Making our data FAIR is not a cost that can be separated from the rest of the project."
 msgstr "Náklady na to, aby naše data byla FAIR, nelze oddělit od ostatních nákladů projektu."
+
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "Mar"
+msgstr "bře"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "March"
+msgstr "března"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "May"
+msgstr "května"
+
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "May"
+msgstr "kvě"
 
 #: src/questions/02-2-accessible.html.j2:117
 msgid "Metadata will be available in a form that can be harvested and indexed (managed by the used repository / repositories)."
@@ -612,6 +702,11 @@ msgstr "Metadata nebudou otevřeně dostupná."
 msgid "More information about the restrictions can be found here:"
 msgstr "Další informace o omezeních naleznete zde:"
 
+#. "not available", for a project detail without an answer
+#: src/projects.html.j2:29 src/projects.html.j2:31 src/projects.html.j2:33
+msgid "N/A"
+msgstr "neuvedeno"
+
 #: src/questions/01-data-summary.html.j2:92
 msgid "Non-equipment datasets"
 msgstr "Datové sady nezískané přístroji"
@@ -619,6 +714,16 @@ msgstr "Datové sady nezískané přístroji"
 #: src/questions/03-resource-allocation.html.j2:128
 msgid "None of the used repositories charge for their services."
 msgstr "Žádný z použitých repozitářů si za své služby neúčtuje poplatky."
+
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "Nov"
+msgstr "lis"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "November"
+msgstr "listopadu"
 
 #: src/macros.html.j2:10 src/macros.html.j2:22
 msgid "ORCID:"
@@ -632,6 +737,16 @@ msgstr "ORCID: %(orcid)s"
 #: src/macros.html.j2:18
 msgid "ORCID: Not found"
 msgstr "ORCID: nenalezeno"
+
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "Oct"
+msgstr "říj"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "October"
+msgstr "října"
 
 #: src/questions/04-data-security.html.j2:146
 msgid "Only project members have read/write access to the data."
@@ -731,6 +846,16 @@ msgstr "Role"
 msgid "Roles"
 msgstr "Role"
 
+#: src/macros.html.j2:183
+msgctxt "short month name in a date"
+msgid "Sep"
+msgstr "zář"
+
+#: src/macros.html.j2:179
+msgctxt "month name in a date"
+msgid "September"
+msgstr "září"
+
 #: src/questions/02-4-reusable.html.j2:146
 msgid "Someone will be given the decision power to move documents or data to a new place after the project has finished."
 msgstr "Po skončení projektu bude někdo pověřen rozhodovat o přesunu dokumentů nebo dat na nové místo."
@@ -740,7 +865,7 @@ msgstr "Po skončení projektu bude někdo pověřen rozhodovat o přesunu dokum
 msgid "Special-purpose repository for the project."
 msgstr "Účelový repozitář pro projekt."
 
-#: src/projects.html.j2:29
+#: src/projects.html.j2:30
 msgid "Start date"
 msgstr "Datum zahájení"
 
@@ -999,7 +1124,7 @@ msgstr "Nejsou žádné pojmenované verze"
 msgid "There are no named versions."
 msgstr "Nejsou žádné pojmenované verze."
 
-#: src/projects.html.j2:62
+#: src/projects.html.j2:63
 msgid "There are no projects described for this DMP."
 msgstr "Pro tento DMP nejsou popsány žádné projekty."
 
@@ -1460,6 +1585,21 @@ msgstr "Datovou sadu použijeme takto: %(value)s"
 msgid "We will use the following version of this dataset: %(value)s"
 msgstr "Použijeme následující verzi této datové sady: %(value)s"
 
+#. the order of a date with the full month name, e.g. "05 October 2026"; [day]
+#. (05), [day_number] (5), [month] (the name), [month_number] (10) and [year]
+#. can be used
+#: src/macros.html.j2:181
+msgctxt "date with a full month name"
+msgid "[day] [month] [year]"
+msgstr "[day_number]. [month] [year]"
+
+#. the order of a short date, e.g. "05 Oct 2026"; [day] (05), [day_number] (5),
+#. [month] (the short name), [month_number] (10) and [year] can be used
+#: src/macros.html.j2:185
+msgctxt "short date"
+msgid "[day] [month] [year]"
+msgstr "[day_number]. [month_number]. [year]"
+
 #: src/questions/02-4-reusable.html.j2:87
 #: src/questions/02-4-reusable.html.j2:89
 msgid "anonymization"
@@ -1507,7 +1647,7 @@ msgstr "zajištění interoperability"
 msgid "ensuring reusability"
 msgstr "zajištění opětovné použitelnosti"
 
-#: src/projects.html.j2:44
+#: src/projects.html.j2:45
 msgid "grant number not yet given"
 msgstr "číslo grantu zatím neuvedeno"
 

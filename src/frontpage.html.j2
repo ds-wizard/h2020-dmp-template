@@ -6,7 +6,7 @@
   <h3>
     {% trans %}Following the <strong>Horizon 2020 DMP Template v2.0</strong>{% endtrans %}
   </h3>
-  <div class="dmp-info">
+  <div class="dmp-info"><div class="dmp-info-cell">
     <dl>
       {%- set contributorsPath = [uuids.adminDetailsCUuid, uuids.contributorsQUuid]|join(".") -%}
       {%- set contributorsItems = repliesMap[contributorsPath]|reply_items -%}
@@ -107,16 +107,16 @@
 
       {% for version in dc.questionnaire.versions if dc.questionnaire.version and version.uuid == dc.questionnaire.version.uuid %}
       <dt>{% trans %}Version{% endtrans %}</dt>
-      <dd>{% trans name=version.name, value=(version.created_at|datetime_format("%d %b %Y %H:%M:%S")) %}{{ name }} ({{ value }} UTC){% endtrans %}</dd>
+      <dd>{% trans name=version.name, value=macros.formatDate(version.created_at, time=true) %}{{ name }} ({{ value }} UTC){% endtrans %}</dd>
       {% endfor %}
 
       <dt>{% trans %}Generated on{% endtrans %}</dt>
-      <dd>{{ dc.document.created_at|datetime_format("%d %b %Y") }}</dd>
+      <dd>{{ macros.formatDate(dc.document.created_at) }}</dd>
     </dl>
     <p class="note">
       {%- set serviceLink -%}<a href="{{ dc.config.service_url }}" target="_blank">{{ dc.config.service_domain_name }}</a>{%- endset %}
       {# TRANSLATORS: %(link)s is the domain of the Wizard as a link #}
       {% trans service_name=dc.config.service_name, link=serviceLink %}Data Management Plan created in {{ service_name }} &laquo;{{ link }}&raquo;{% endtrans %}
     </p>
-  </div>
+  </div></div>
 </header>

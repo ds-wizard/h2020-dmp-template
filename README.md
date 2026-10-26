@@ -32,6 +32,8 @@ Starting v1.28.0, AI tools (Codex, Claude Code) are used to assist in the develo
 ### 2.0.0
 
 - Adjusted to Wizard 5.0 (template metamodel version 19.0, template id `dsw.h2020-dmp`, knowledge models `dsw.root` and `dsw.lifesciences`)
+- Translated documents declare their language (`lang`), show dates with translated month names, and translate "N/A"
+- Fixed the information table on the front page covering the title when there are many contact people or creators
 
 ### 1.28.0
 

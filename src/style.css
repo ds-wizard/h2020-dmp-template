@@ -76,10 +76,7 @@ section {
 
 header {
   padding-top: 5cm;
-  height: 24cm;
-  box-sizing: border-box;
   page-break-after: always;
-  position: relative;
 }
 
 header .dmp {
@@ -90,9 +87,19 @@ h1 {
   font-size: 24pt;
 }
 
-header div {
-  position: absolute;
-  bottom: 0;
+/* The info at the bottom of the first page: a table cell with a minimum height (the rest of
+   the page below the title) and its content at the bottom. Longer info makes the cell grow
+   downwards (to the next page), so it never covers the title as an absolute position did. */
+header .dmp-info {
+  display: table;
+  width: 100%;
+}
+
+header .dmp-info-cell {
+  display: table-cell;
+  height: 13.7cm;
+  vertical-align: bottom;
+  padding-top: 1cm;
 }
 
 header .contact-orcid {

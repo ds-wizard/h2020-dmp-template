@@ -25,11 +25,12 @@
     {%- set fundersItems = repliesMap[fundersPath]|reply_items -%}
       <dl>
         <dt>{% trans %}Acronym{% endtrans %}</dt>
-        <dd>{{ projectAcronym if projectAcronym else "N/A" }}</dd>
+        {#- TRANSLATORS: "not available", for a project detail without an answer #}
+        <dd>{{ projectAcronym if projectAcronym else _("N/A") }}</dd>
         <dt>{% trans %}Start date{% endtrans %}</dt>
-        <dd>{{ projectStart if projectStart else "N/A" }}</dd>
+        <dd>{{ projectStart if projectStart else _("N/A") }}</dd>
         <dt>{% trans %}End date{% endtrans %}</dt>
-        <dd>{{ projectEnd if projectEnd else "N/A" }}</dd>
+        <dd>{{ projectEnd if projectEnd else _("N/A") }}</dd>
         <dt>{% trans %}Funding{% endtrans %}</dt>
         <dd>
           {%- if fundersItems|length > 0 %}
