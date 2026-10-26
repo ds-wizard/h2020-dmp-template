@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Horizon 2020 DMP 1.28.0\n"
+"Project-Id-Version: Horizon 2020 DMP 2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-25 21:24+0100\n"
+"POT-Creation-Date: 2026-10-26 09:05+0100\n"
 "PO-Revision-Date: 2026-10-25 21:18+0100\n"
 "Last-Translator: Content AI Workspace (test translation)\n"
 "Language-Team: Czech\n"
@@ -41,7 +41,7 @@ msgstr "%(items)s a %(last)s"
 msgid "%(items)s, nor %(last)s"
 msgstr "%(items)s, ani %(last)s"
 
-#: src/frontpage.html.j2:107
+#: src/frontpage.html.j2:110
 #, python-format
 msgid "%(name)s (%(value)s UTC)"
 msgstr "%(name)s (%(value)s UTC)"
@@ -110,7 +110,7 @@ msgstr "(podáno)"
 msgid "(granted)"
 msgstr "(uděleno)"
 
-#: src/frontpage.html.j2:41 src/frontpage.html.j2:85
+#: src/frontpage.html.j2:41 src/frontpage.html.j2:88
 msgid "(name not given)"
 msgstr "(jméno neuvedeno)"
 
@@ -274,7 +274,7 @@ msgstr "Jak již bylo uvedeno v oddílu 2.2, všechna naše data se mohou ihned 
 msgid "Available under some restrictions, which we will follow in our project%(value)s"
 msgstr "Dostupná s určitými omezeními, která v našem projektu dodržíme%(value)s"
 
-#: src/frontpage.html.j2:62
+#: src/frontpage.html.j2:64
 msgid "Based on"
 msgstr "Vychází z"
 
@@ -303,7 +303,7 @@ msgstr[2] "Kontaktní osoby"
 msgid "Contributors"
 msgstr "Přispěvatelé"
 
-#: src/frontpage.html.j2:71
+#: src/frontpage.html.j2:74
 msgid "Created by"
 msgstr "Vytvořil(a)"
 
@@ -322,7 +322,7 @@ msgid "Data Management Plan"
 msgstr "Plán správy dat"
 
 #. %(link)s is the domain of the Wizard as a link
-#: src/frontpage.html.j2:116
+#: src/frontpage.html.j2:119
 #, python-format
 msgid "Data Management Plan created in %(service_name)s &laquo;%(link)s&raquo;"
 msgstr "Plán správy dat vytvořený v %(service_name)s &laquo;%(link)s&raquo;"
@@ -431,7 +431,7 @@ msgstr "Financování"
 msgid "General-purpose repository"
 msgstr "Obecný repozitář"
 
-#: src/frontpage.html.j2:110
+#: src/frontpage.html.j2:113
 msgid "Generated on"
 msgstr "Vygenerováno"
 
@@ -684,7 +684,7 @@ msgstr "Členové projektu nebudou nosit data s sebou (např. na noteboocích, U
 msgid "Project members will not store data or software on computers in the lab or external hard drives connected to those computers."
 msgstr "Členové projektu nebudou ukládat data ani software na počítače v laboratoři ani na externí pevné disky k nim připojené."
 
-#: src/frontpage.html.j2:66
+#: src/frontpage.html.j2:69
 msgid "Project phase"
 msgstr "Fáze projektu"
 
@@ -1020,7 +1020,7 @@ msgstr "Pro přístup uživatelů k neveřejným datům existuje tento postup: %
 msgid "There is no contact person specified yet"
 msgstr "Zatím není uvedena žádná kontaktní osoba"
 
-#: src/frontpage.html.j2:101
+#: src/frontpage.html.j2:104
 msgid "There is no creator specified yet"
 msgstr "Zatím není uveden žádný autor"
 
@@ -1137,7 +1137,7 @@ msgstr "K realizaci DMP nejsou potřeba žádné další odborné znalosti."
 msgid "To validate the integrity of the results, the following will be done:"
 msgstr "K ověření integrity výsledků provedeme následující:"
 
-#: src/frontpage.html.j2:106 src/versions.html.j2:8 src/word/versions.html.j2:7
+#: src/frontpage.html.j2:109 src/versions.html.j2:8 src/word/versions.html.j2:7
 msgid "Version"
 msgstr "Verze"
 
@@ -1317,7 +1317,7 @@ msgstr "Pro shromažďování osobních údajů používáme jiný právní zák
 
 #. %(service)s is the name of the Wizard as a link, %(instance)s the URL of the
 #. instance, %(project_url)s the URL of the project
-#: src/questions/06-other-issues.html.j2:9
+#: src/questions/06-other-issues.html.j2:11
 #, python-format
 msgid "We use the %(service)s with its <em>%(name)s</em> (ID: %(id)s) knowledge model to make our DMP. More specifically, we use the %(instance)s %(service_name_short)s instance where the project has the direct URL: %(project_url)s."
 msgstr "K vytvoření našeho DMP používáme %(service)s se znalostním modelem <em>%(name)s</em> (ID: %(id)s). Konkrétně používáme instanci %(service_name_short)s %(instance)s, kde má projekt přímou adresu: %(project_url)s."
