@@ -3,95 +3,6 @@
   <span class="contact-email"><a href="mailto:{{ email }}">{{ email }}</a></span>
 {%- endmacro -%}
 
-{%- macro formatOrcid(reply) -%}
-  {%- if reply and reply.value.value.type == "IntegrationType" -%}
-    {%- if reply.value.value.raw -%}
-      {%- set replyObject = reply.value.value.raw -%}
-      <span class="contact-orcid">{% trans %}ORCID:{% endtrans %} <a href="https://orcid.org/{{ replyObject["orcid-id"] }}" target="_blank">{{ replyObject["orcid-id"] }}</a></span>
-    {%- else -%}
-      {# Extract ORCID number from the value string #}
-      {%- set value = reply.value.value.value %}
-      {%- set orcid = value.split('ORCID:')[-1].strip().split()[0]|replace("**", "")|markdown|replace("<p>", "")|replace("</p>", "") if 'ORCID:' in value else None %}
-      {%- if orcid and orcid|length >= 15 -%}
-        <span class="contact-orcid">{% trans orcid=orcid %}ORCID: {{ orcid }}{% endtrans %}</span>
-      {%- else -%}
-        <span class="contact-orcid">{% trans %}ORCID: Not found{% endtrans %}</span>
-      {%- endif -%}
-    {%- endif -%}
-  {%- elif reply and reply.value.value.type == "PlainType" -%}
-    <span class="contact-orcid">{% trans %}ORCID:{% endtrans %} <a href="https://orcid.org/{{ reply.value.value.value }}" target="_blank">{{ reply.value.value.value }}</a></span>
-  {%- endif -%}
-{%- endmacro -%}
-
-{%- macro integrationFairSharing(reply) -%}
-  {%- if reply and reply.value.value.type == "IntegrationType" -%}
-    {%- if reply.value.value.raw -%}
-      {%- set replyObject = reply.value.value.raw -%}
-      {%- if replyObject.doi -%}
-        <a href="https://doi.org/{{ replyObject.doi }}" target="_blank">{{ replyObject.name }}</a>
-      {%- else -%}
-        <a href="https://fairsharing.org/{{ replyObject.id }}" target="_blank">{{ replyObject.name }}</a>
-      {%- endif -%}
-    {%- else -%}
-      {{ reply.value.value.value.rsplit(" ![]")[0]|replace("**", "")|markdown|replace("<p>", "")|replace("</p>", "") }}
-    {%- endif -%}
-  {%- elif reply and reply.value.value.type == "PlainType" -%}
-    {{ reply.value.value.value }}
-  {%- endif -%}
-{%- endmacro -%}
-
-{%- macro integrationCrossref(reply) -%}
-  {%- if reply and reply.value.value.type == "IntegrationType" -%}
-    {%- if reply.value.value.raw -%}
-      {%- set replyObject = reply.value.value.raw -%}
-      <a href="{{ replyObject.uri }}" target="_blank">{{ replyObject.name }}</a>
-    {%- else -%}
-      {{ reply.value.value.value.rsplit(" ![]")[0]|replace("**", "")|markdown|replace("<p>", "")|replace("</p>", "") }}
-    {%- endif -%}
-  {%- elif reply and reply.value.value.type == "PlainType" -%}
-    {{ reply.value.value.value }}
-  {%- endif -%}
-{%- endmacro -%}
-
-{%- macro integrationROR(reply) -%}
-  {%- if reply and reply.value.value.type == "IntegrationType" -%}
-    {%- if reply.value.value.raw -%}
-      {%- set item = reply.value.value.raw -%}
-      {% for name in item.names -%}
-        {% if "ror_display" in name.types -%}
-          <a href="{{ item.id }}" target="_blank">{{ name.value }}</a>
-        {%- endif %}
-      {%- endfor %}
-      {% for name in item.names -%}
-        {% if "acronym" in name.types -%}
-          ({{ name.value }})
-        {%- endif %}
-      {%- endfor %}
-    {%- else -%}
-      {{ reply.value.value.value.rsplit(" ![]")[0]|replace("**", "")|markdown|replace("<p>", "")|replace("</p>", "") }}
-    {%- endif -%}
-  {%- elif reply and reply.value.value.type == "PlainType" -%}
-    {{ reply.value.value.value }}
-  {%- endif -%}
-{%- endmacro -%}
-
-{%- macro integrationCurrency(reply) -%}
-  {%- if reply and reply.value.value.type == "IntegrationType" -%}
-    {%- if reply.value.value.raw -%}
-      {%- set replyObject = reply.value.value.raw -%}
-      {{replyObject.code}} ({{replyObject.name}})
-    {%- else -%}
-      {{ reply.value.value.value.rsplit(" ![]")[0]|replace("**", "")|markdown|replace("<p>", "")|replace("</p>", "") }}
-    {%- endif -%}
-  {%- elif reply and reply.value.value.type == "PlainType" -%}
-    {{ reply.value.value.value }}
-  {%- endif -%}
-{%- endmacro -%}
-
-{%- macro integrationValue(reply) -%}
-    {{ reply.value.value.value }}
-{%- endmacro -%}
-
 {#- A paragraph whose content may contain block elements, e.g. a sentence ending with an answer in
     Markdown that has a list or several paragraphs:
       {% call macros.para() %}...: {{ value|markdown }}{% endcall %}
@@ -186,5 +97,94 @@
     {%- endif -%}
     {{ pattern|replace("[day_number]", day|int|string)|replace("[day]", day)|replace("[month_number]", month|string)|replace("[month]", months[month - 1])|replace("[year]", year) }}
     {%- if time %} {{ value|datetime_format("%H:%M:%S") }}{% endif -%}
+  {%- endif -%}
+{%- endmacro -%}
+
+{#- Integration replies of the data model (src/data/model.j2): an object with _value (the text of the
+    reply) and, when an item of the integration was selected, _raw (its data) -#}
+
+{%- macro orcid(o) -%}
+  {%- if o._value is not none and '_raw' in o -%}
+    {%- if o._raw -%}
+      <span class="contact-orcid">{% trans %}ORCID:{% endtrans %} <a href="https://orcid.org/{{ o._raw["orcid-id"] }}" target="_blank">{{ o._raw["orcid-id"] }}</a></span>
+    {%- else -%}
+      {# Extract ORCID number from the value string #}
+      {%- set value = o._value %}
+      {%- set orcid = value.split('ORCID:')[-1].strip().split()[0]|replace("**", "")|markdown|replace("<p>", "")|replace("</p>", "") if 'ORCID:' in value else None %}
+      {%- if orcid and orcid|length >= 15 -%}
+        <span class="contact-orcid">{% trans orcid=orcid %}ORCID: {{ orcid }}{% endtrans %}</span>
+      {%- else -%}
+        <span class="contact-orcid">{% trans %}ORCID: Not found{% endtrans %}</span>
+      {%- endif -%}
+    {%- endif -%}
+  {%- elif o._value is not none -%}
+    <span class="contact-orcid">{% trans %}ORCID:{% endtrans %} <a href="https://orcid.org/{{ o._value }}" target="_blank">{{ o._value }}</a></span>
+  {%- endif -%}
+{%- endmacro -%}
+
+{#- The text of an integration reply without a selected item: its first part, without bold -#}
+{%- macro _integrationText(o) -%}
+  {{ o._value.rsplit(" ![]")[0]|replace("**", "")|markdown|replace("<p>", "")|replace("</p>", "") }}
+{%- endmacro -%}
+
+{%- macro fairsharing(o) -%}
+  {%- if o._value is not none and '_raw' in o -%}
+    {%- if o._raw -%}
+      {%- if o._raw.doi -%}
+        <a href="https://doi.org/{{ o._raw.doi }}" target="_blank">{{ o._raw.name }}</a>
+      {%- else -%}
+        <a href="https://fairsharing.org/{{ o._raw.id }}" target="_blank">{{ o._raw.name }}</a>
+      {%- endif -%}
+    {%- else -%}
+      {{ _integrationText(o) }}
+    {%- endif -%}
+  {%- elif o._value is not none -%}
+    {{ o._value }}
+  {%- endif -%}
+{%- endmacro -%}
+
+{%- macro crossref(o) -%}
+  {%- if o._value is not none and '_raw' in o -%}
+    {%- if o._raw -%}
+      <a href="{{ o._raw.uri }}" target="_blank">{{ o._raw.name }}</a>
+    {%- else -%}
+      {{ _integrationText(o) }}
+    {%- endif -%}
+  {%- elif o._value is not none -%}
+    {{ o._value }}
+  {%- endif -%}
+{%- endmacro -%}
+
+{%- macro ror(o) -%}
+  {%- if o._value is not none and '_raw' in o -%}
+    {%- if o._raw -%}
+      {%- set item = o._raw -%}
+      {% for name in item.names -%}
+        {% if "ror_display" in name.types -%}
+          <a href="{{ item.id }}" target="_blank">{{ name.value }}</a>
+        {%- endif %}
+      {%- endfor %}
+      {% for name in item.names -%}
+        {% if "acronym" in name.types -%}
+          ({{ name.value }})
+        {%- endif %}
+      {%- endfor %}
+    {%- else -%}
+      {{ _integrationText(o) }}
+    {%- endif -%}
+  {%- elif o._value is not none -%}
+    {{ o._value }}
+  {%- endif -%}
+{%- endmacro -%}
+
+{%- macro currency(o) -%}
+  {%- if o._value is not none and '_raw' in o -%}
+    {%- if o._raw -%}
+      {{o._raw.code}} ({{o._raw.name}})
+    {%- else -%}
+      {{ _integrationText(o) }}
+    {%- endif -%}
+  {%- elif o._value is not none -%}
+    {{ o._value }}
   {%- endif -%}
 {%- endmacro -%}
