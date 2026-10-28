@@ -272,13 +272,13 @@
             {%- elif formatsVolume._value == 'gigabytes' -%}
               {%- set formatsVolumeTotalGB = formatsVolume.valueGb._value -%}
               {%- if formatsVolumeTotalGB not in [none, ''] %}
-                {% trans size=formatsVolumeTotalGB %}We expect to have {{ size }} GB of data in this format.{% endtrans %}
+                {% trans size=macros.typed(formatsVolume.valueGb) %}We expect to have {{ size }} GB of data in this format.{% endtrans %}
               {%- endif -%}
             {%- elif formatsVolume._value == 'files' -%}
               {%- set formatsVolumeFiles = formatsVolume.number._value -%}
               {%- set formatsVolumeFileGB = formatsVolume.averageSizeGb._value -%}
               {%- if formatsVolumeFiles not in [none, ''] and formatsVolumeFileGB not in [none, ''] %}
-                {% trans files=formatsVolumeFiles, size=formatsVolumeFileGB, value=((formatsVolumeFiles|int * formatsVolumeFileGB|float)|round(2)) %}We expect to have {{ files }} files of average size {{ size }} GB (i.e. approximately {{ value }} GB in total).{% endtrans %}
+                {% trans files=macros.typed(formatsVolume.number), size=macros.typed(formatsVolume.averageSizeGb), value=((formatsVolumeFiles|int * formatsVolumeFileGB|float)|round(2)) %}We expect to have {{ files }} files of average size {{ size }} GB (i.e. approximately {{ value }} GB in total).{% endtrans %}
               {%- endif -%}
             {%- endif -%}
           {%- endset -%}

@@ -1,6 +1,8 @@
 {#- data -#}
 {%- set adminInfo = x.administrativeInformation -%}
 {%- set preserving = x.preservingData -%}
+{%- set allFundings = [] -%}
+{%- for project in adminInfo.projects -%}{%- do allFundings.extend(project.fundings) -%}{%- endfor -%}
 <div id="q-resource-allocation" class="question">
   <div class="answer">
 
@@ -40,7 +42,7 @@
 
                         {#- a number (0 is an amount too) -#}
                         {%- if  projectCostItemAmountReply is not none and projectCostItemAmountReply != '' and projectCostItemCurrency._value is not none -%}
-                            <p>{% trans amount=projectCostItemAmountReply, currency=(macros.currency(projectCostItemCurrency)) %}The amount is {{ amount }} {{ currency }}.{% endtrans %}</p>
+                            <p>{% trans amount=macros.typed(cost.amount), currency=(macros.currency(projectCostItemCurrency)) %}The amount is {{ amount }} {{ currency }}.{% endtrans %}</p>
                         {%- endif -%}
 
                         {%- set projectCostItemAllocationItems = cost.allocation|map(attribute='_value')|list -%}
@@ -73,8 +75,8 @@
                         {%- set coveredBy = cost.coveredBy -%}
 
                         {%- if coveredBy._value == 'grant' -%}
-                          {#- the selected funding of the project -#}
-                          {%- set funding = project.fundings|selectattr('_uuid', 'equalto', coveredBy.grantID.get('_uuid'))|first -%}
+                          {#- the selected funding (of any of the projects) -#}
+                          {%- set funding = allFundings|selectattr('_uuid', 'equalto', coveredBy.grantID.get('_uuid'))|first -%}
                           {%- set costCoverGrantIdReply = funding.grantNumber._value if funding else none -%}
                           {%- if costCoverGrantIdReply -%}
                             <p>{% trans grant=costCoverGrantIdReply %}This cost will be covered by a funding grant (grant number: {{ grant }}).{% endtrans %}</p>

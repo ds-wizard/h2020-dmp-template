@@ -15,6 +15,7 @@
     {%- endif -%}
 
     {%- set projectAcronym = project.acronym._value -%}
+    {%- set projectNumber = project.id._value -%}
     {%- set projectStart = project.startDate._value -%}
     {%- set projectEnd = project.endDate._value -%}
     {%- set fundings = project.fundings -%}
@@ -22,6 +23,8 @@
         <dt>{% trans %}Acronym{% endtrans %}</dt>
         {#- TRANSLATORS: "not available", for a project detail without an answer #}
         <dd>{{ projectAcronym if projectAcronym else _("N/A") }}</dd>
+        <dt>{% trans %}Project Number{% endtrans %}</dt>
+        <dd>{{ projectNumber if projectNumber else _("N/A") }}</dd>
         <dt>{% trans %}Start date{% endtrans %}</dt>
         <dd>{{ projectStart if projectStart else _("N/A") }}</dd>
         <dt>{% trans %}End date{% endtrans %}</dt>

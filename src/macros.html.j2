@@ -100,6 +100,12 @@
   {%- endif -%}
 {%- endmacro -%}
 
+{#- A number reply as the user typed it ("1200.50"; the data model has it as a number, 1200.5) -#}
+{%- macro typed(o) -%}
+  {%- set reply = dc.questionnaire.replies.get(o._path) if o._path else none -%}
+  {{ reply.value if reply and reply.value is string else o._value }}
+{%- endmacro -%}
+
 {#- Integration replies of the data model (src/data/model.j2): an object with _value (the text of the
     reply) and, when an item of the integration was selected, _raw (its data) -#}
 

@@ -34,6 +34,7 @@ Starting v1.28.0, AI tools (Codex, Claude Code) are used to assist in the develo
 - Replies are read by the annotations of the knowledge model (`json.key`, `json.value`) instead of UUIDs; requires the Common DSW Knowledge Model (`dsw.root`) or the Life Sciences DSW Knowledge Model (`dsw.lifesciences`) 2.8.1 or newer
 - The data model is separated from rendering: `src/data/model.j2` extracts the replies (`extract_replies` version 2, which includes unanswered questions) and maps them, the other templates only render
 - Adjusted to the knowledge model 2.8: metadata and provenance standards from FAIRsharing (section 2.1), provenance kept by a workflow system (section 2.1), the grant number of the funding selected for a cost (section 3)
+- The policies and procedures for data management in section 6 (other national, funder, sectoral or departmental procedures) and the project number of each project
 - Fixed "Roles" shown for contributors with a single role
 - Fixed the instructions to get access to open metadata (the answers were swapped) and the conditions of use of re-used non-reference datasets that were never shown (section 2.2)
 

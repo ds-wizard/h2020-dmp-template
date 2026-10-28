@@ -1,3 +1,5 @@
+{#- data -#}
+{%- set policyItems = x.administrativeInformation.policies -%}
 <div id="q-other-issues" class="question">
   <div class="answer">
     {%- set project_url = dc.config.client_url ~ "/projects/" ~ dc.project.uuid -%}
@@ -10,5 +12,37 @@
     {%- if dc.project and dc.km_package %}
     <p>{% trans service=serviceLink, name=dc.km_package.name, id=packageId, instance=instanceLink, service_name_short=dc.config.service_name_short, project_url=projectLink %}We use the {{ service }} with its <em>{{ name }}</em> (ID: {{ id }}) knowledge model to make our DMP. More specifically, we use the {{ instance }} {{ service_name_short }} instance where the project has the direct URL: {{ project_url }}.{% endtrans %}</p>
     {%- endif %}
+
+    {# Applied policies #}
+    {%- set policies = [] -%}
+    {%- for item in policyItems -%}
+      {%- set name = item.name._value or '' -%}
+      {%- set ref = item.url._value or '' -%}
+      {%- set text = item.description._value or '' -%}
+      {%- if name or ref -%}
+        {%- do policies.append({
+          'name': name|trim|e,
+          'ref': ref|trim|e,
+          'text': text|trim|e,
+        }) -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if policies|length > 0 -%}
+      <p>{% trans %}We will be using the following policies and procedures for data management:{% endtrans %}</p>
+      <ul>
+        {%- for policy in policies -%}
+          <li>
+            {% if policy.name %}
+              <strong>{{ policy.name }}</strong> {% if policy.ref %}<br><a href="{{ policy.ref }}" target="_blank">{{ policy.ref }}</a>{% endif %}
+            {% else %}
+              <strong><a href="{{ policy.ref }}" target="_blank">{{ policy.ref }}</a></strong>
+            {% endif %}
+            {% if policy.text %}<br>{{ policy.text|markdown }}{% endif %}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- else -%}
+      <p>{% trans %}We will not be using any extra national, funder, sectoral, or departmental policies or procedures for data management.{% endtrans %}</p>
+    {%- endif -%}
   </div>
 </div>

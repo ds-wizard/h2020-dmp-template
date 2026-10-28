@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Horizon 2020 DMP 2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-27 15:11+0100\n"
+"POT-Creation-Date: 2026-10-28 12:10+0100\n"
 "PO-Revision-Date: 2026-10-25 21:18+0100\n"
 "Last-Translator: Content AI Workspace (test translation)\n"
 "Language-Team: Czech\n"
@@ -46,7 +46,7 @@ msgstr "%(items)s, ani %(last)s"
 msgid "%(name)s (%(value)s UTC)"
 msgstr "%(name)s (%(value)s UTC)"
 
-#: src/questions/03-resource-allocation.html.j2:169
+#: src/questions/03-resource-allocation.html.j2:171
 #, python-format
 msgid "%(names)s is responsible for all issues relating to the protection of personal data and data protection policies in general."
 msgid_plural "%(names)s are responsible for all issues relating to the protection of personal data and data protection policies in general."
@@ -54,7 +54,7 @@ msgstr[0] "%(names)s odpovídá za všechny záležitosti týkající se ochrany
 msgstr[1] "%(names)s odpovídají za všechny záležitosti týkající se ochrany osobních údajů a za zásady ochrany údajů obecně."
 msgstr[2] "%(names)s odpovídají za všechny záležitosti týkající se ochrany osobních údajů a za zásady ochrany údajů obecně."
 
-#: src/questions/03-resource-allocation.html.j2:161
+#: src/questions/03-resource-allocation.html.j2:163
 #, python-format
 msgid "%(names)s is responsible for finding, gathering, and collecting data."
 msgid_plural "%(names)s are responsible for finding, gathering, and collecting data."
@@ -62,7 +62,7 @@ msgstr[0] "%(names)s odpovídá za vyhledávání, shromažďování a sběr dat
 msgstr[1] "%(names)s odpovídají za vyhledávání, shromažďování a sběr dat."
 msgstr[2] "%(names)s odpovídají za vyhledávání, shromažďování a sběr dat."
 
-#: src/questions/03-resource-allocation.html.j2:167
+#: src/questions/03-resource-allocation.html.j2:169
 #, python-format
 msgid "%(names)s is responsible for generating and disseminating copies of the resource in either electronic or print form."
 msgid_plural "%(names)s are responsible for generating and disseminating copies of the resource in either electronic or print form."
@@ -70,7 +70,7 @@ msgstr[0] "%(names)s odpovídá za vytváření a šíření kopií zdroje v ele
 msgstr[1] "%(names)s odpovídají za vytváření a šíření kopií zdroje v elektronické nebo tištěné podobě."
 msgstr[2] "%(names)s odpovídají za vytváření a šíření kopií zdroje v elektronické nebo tištěné podobě."
 
-#: src/questions/03-resource-allocation.html.j2:171
+#: src/questions/03-resource-allocation.html.j2:173
 #, python-format
 msgid "%(names)s is responsible for implementing the DMP, and ensuring it is reviewed and revised."
 msgid_plural "%(names)s are responsible for implementing the DMP, and ensuring it is reviewed and revised."
@@ -78,7 +78,7 @@ msgstr[0] "%(names)s odpovídá za realizaci DMP a za to, že bude kontrolován 
 msgstr[1] "%(names)s odpovídají za realizaci DMP a za to, že bude kontrolován a revidován."
 msgstr[2] "%(names)s odpovídají za realizaci DMP a za to, že bude kontrolován a revidován."
 
-#: src/questions/03-resource-allocation.html.j2:163
+#: src/questions/03-resource-allocation.html.j2:165
 #, python-format
 msgid "%(names)s is responsible for maintaining the finished resource."
 msgid_plural "%(names)s are responsible for maintaining the finished resource."
@@ -86,7 +86,7 @@ msgstr[0] "%(names)s odpovídá za údržbu hotového zdroje."
 msgstr[1] "%(names)s odpovídají za údržbu hotového zdroje."
 msgstr[2] "%(names)s odpovídají za údržbu hotového zdroje."
 
-#: src/questions/03-resource-allocation.html.j2:159
+#: src/questions/03-resource-allocation.html.j2:161
 #, python-format
 msgid "%(names)s is responsible for reviewing, enhancing, cleaning, or standardizing metadata and the associated data submitted for storage, use and maintenance within a data centre or repository."
 msgid_plural "%(names)s are responsible for reviewing, enhancing, cleaning, or standardizing metadata and the associated data submitted for storage, use and maintenance within a data centre or repository."
@@ -94,7 +94,7 @@ msgstr[0] "%(names)s odpovídá za kontrolu, rozšiřování, čištění nebo s
 msgstr[1] "%(names)s odpovídají za kontrolu, rozšiřování, čištění nebo standardizaci metadat a souvisejících dat předaných k uložení, používání a údržbě v datovém centru nebo repozitáři."
 msgstr[2] "%(names)s odpovídají za kontrolu, rozšiřování, čištění nebo standardizaci metadat a souvisejících dat předaných k uložení, používání a údržbě v datovém centru nebo repozitáři."
 
-#: src/questions/03-resource-allocation.html.j2:165
+#: src/questions/03-resource-allocation.html.j2:167
 #, python-format
 msgid "%(names)s is responsible for the management and proficiency of data including data processing, data policies, data guidelines, and data availability."
 msgid_plural "%(names)s are responsible for the management and proficiency of data including data processing, data policies, data guidelines, and data availability."
@@ -102,11 +102,11 @@ msgstr[0] "%(names)s odpovídá za správu a odbornou péči o data včetně zpr
 msgstr[1] "%(names)s odpovídají za správu a odbornou péči o data včetně zpracování dat, datových politik, datových směrnic a dostupnosti dat."
 msgstr[2] "%(names)s odpovídají za správu a odbornou péči o data včetně zpracování dat, datových politik, datových směrnic a dostupnosti dat."
 
-#: src/projects.html.j2:36
+#: src/projects.html.j2:39
 msgid "(applied)"
 msgstr "(podáno)"
 
-#: src/projects.html.j2:36
+#: src/projects.html.j2:39
 msgid "(granted)"
 msgstr "(uděleno)"
 
@@ -123,8 +123,8 @@ msgstr "(jméno neuvedeno)"
 #: src/questions/02-2-accessible.html.j2:177
 #: src/questions/02-2-accessible.html.j2:200
 #: src/questions/02-4-reusable.html.j2:15
-#: src/questions/03-resource-allocation.html.j2:16
-#: src/questions/03-resource-allocation.html.j2:34
+#: src/questions/03-resource-allocation.html.j2:18
+#: src/questions/03-resource-allocation.html.j2:36
 #: src/questions/05-ethical-aspects.html.j2:80
 msgid "(no name given)"
 msgstr "(název neuveden)"
@@ -135,7 +135,7 @@ msgstr "(název neuveden)"
 msgid "(not published)"
 msgstr "(nebude zveřejněna)"
 
-#: src/projects.html.j2:36
+#: src/projects.html.j2:39
 msgid "(planned)"
 msgstr "(plánováno)"
 
@@ -143,7 +143,7 @@ msgstr "(plánováno)"
 msgid "(project name not given)"
 msgstr "(název projektu neuveden)"
 
-#: src/projects.html.j2:36
+#: src/projects.html.j2:39
 msgid "(rejected)"
 msgstr "(zamítnuto)"
 
@@ -205,7 +205,7 @@ msgstr "Uživatel může tato data používat bez jakéhokoli specifického soft
 msgid "A user of this data needs specific software to be able to use it:"
 msgstr "Uživatel těchto dat potřebuje k jejich používání specifický software:"
 
-#: src/projects.html.j2:22
+#: src/projects.html.j2:23
 msgid "Acronym"
 msgstr "Zkratka"
 
@@ -328,7 +328,7 @@ msgid "Created by"
 msgstr "Vytvořil(a)"
 
 #. %(link)s is the name of the Wizard as a link
-#: src/word/frontpage.html.j2:27
+#: src/word/frontpage.html.j2:30
 #, python-format
 msgid "Created in %(link)s"
 msgstr "Vytvořeno v %(link)s"
@@ -378,7 +378,7 @@ msgctxt "month name in a date"
 msgid "December"
 msgstr "prosince"
 
-#: src/projects.html.j2:40
+#: src/projects.html.j2:43
 msgid "Did not apply for any funding yet."
 msgstr "Zatím jsme o žádné financování nežádali."
 
@@ -399,7 +399,7 @@ msgstr "Z důvodu ochrany soukromí musí data zůstat ve stejné zemi."
 msgid "Due to privacy reasons, the data must stay in the same institute."
 msgstr "Z důvodu ochrany soukromí musí data zůstat ve stejné instituci."
 
-#: src/projects.html.j2:27
+#: src/projects.html.j2:30
 msgid "End date"
 msgstr "Datum ukončení"
 
@@ -407,7 +407,7 @@ msgstr "Datum ukončení"
 msgid "Ethical approvals"
 msgstr "Etická schválení"
 
-#: src/questions/03-resource-allocation.html.j2:7
+#: src/questions/03-resource-allocation.html.j2:9
 msgid "FAIR is a central part of our data management; it is considered at every decision in our data management plan. We use the FAIR data process ourselves to make our use of the data as efficient as possible."
 msgstr "FAIR je ústřední součástí naší správy dat; zohledňujeme jej při každém rozhodnutí v našem plánu správy dat. Proces FAIR dat používáme i sami, aby naše práce s daty byla co nejefektivnější."
 
@@ -458,7 +458,7 @@ msgstr "Volně dostupná pro jakékoli použití (volné dílo nebo CC0)."
 msgid "Freely available with obligation to quote the source (e.g. CC-BY)."
 msgstr "Volně dostupná s povinností citovat zdroj (např. CC-BY)."
 
-#: src/projects.html.j2:29
+#: src/projects.html.j2:32
 msgid "Funding"
 msgstr "Financování"
 
@@ -633,11 +633,11 @@ msgstr "Časově omezené embargo nelze použít, protože některá data s omez
 msgid "Limited embargo will not be used as all data will be opened immediately."
 msgstr "Časově omezené embargo nebude použito, protože všechna data budou otevřena okamžitě."
 
-#: src/word/frontpage.html.j2:20
+#: src/word/frontpage.html.j2:22
 msgid "Logo"
 msgstr "Logo"
 
-#: src/questions/03-resource-allocation.html.j2:94
+#: src/questions/03-resource-allocation.html.j2:96
 msgid "Making our data FAIR is not a cost that can be separated from the rest of the project."
 msgstr "Náklady na to, aby naše data byla FAIR, nelze oddělit od ostatních nákladů projektu."
 
@@ -699,7 +699,8 @@ msgid "More information about the restrictions can be found here:"
 msgstr "Další informace o omezeních naleznete zde:"
 
 #. "not available", for a project detail without an answer
-#: src/projects.html.j2:24 src/projects.html.j2:26 src/projects.html.j2:28
+#: src/projects.html.j2:25 src/projects.html.j2:27 src/projects.html.j2:29
+#: src/projects.html.j2:31
 msgid "N/A"
 msgstr "neuvedeno"
 
@@ -707,7 +708,7 @@ msgstr "neuvedeno"
 msgid "Non-equipment datasets"
 msgstr "Datové sady nezískané přístroji"
 
-#: src/questions/03-resource-allocation.html.j2:116
+#: src/questions/03-resource-allocation.html.j2:118
 msgid "None of the used repositories charge for their services."
 msgstr "Žádný z použitých repozitářů si za své služby neúčtuje poplatky."
 
@@ -721,16 +722,16 @@ msgctxt "month name in a date"
 msgid "November"
 msgstr "listopadu"
 
-#: src/macros.html.j2:109 src/macros.html.j2:121
+#: src/macros.html.j2:115 src/macros.html.j2:127
 msgid "ORCID:"
 msgstr "ORCID:"
 
-#: src/macros.html.j2:115
+#: src/macros.html.j2:121
 #, python-format
 msgid "ORCID: %(orcid)s"
 msgstr "ORCID: %(orcid)s"
 
-#: src/macros.html.j2:117
+#: src/macros.html.j2:123
 msgid "ORCID: Not found"
 msgstr "ORCID: nenalezeno"
 
@@ -774,6 +775,10 @@ msgstr "Náš institucionální repozitář."
 #: src/questions/02-2-accessible.html.j2:241
 msgid "Our national repository."
 msgstr "Náš národní repozitář."
+
+#: src/projects.html.j2:26
+msgid "Project Number"
+msgstr "Číslo projektu"
 
 #: src/questions/04-data-security.html.j2:26
 msgid "Project members can carry data with them on encrypted data carriers and password-protected laptops."
@@ -865,7 +870,7 @@ msgstr "Po skončení projektu bude někdo pověřen rozhodovat o přesunu dokum
 msgid "Special-purpose repository for the project."
 msgstr "Účelový repozitář pro projekt."
 
-#: src/projects.html.j2:25
+#: src/projects.html.j2:28
 msgid "Start date"
 msgstr "Datum zahájení"
 
@@ -874,7 +879,7 @@ msgstr "Datum zahájení"
 msgid "Starting %(date)s:"
 msgstr "Od %(date)s:"
 
-#: src/questions/03-resource-allocation.html.j2:43
+#: src/questions/03-resource-allocation.html.j2:45
 #, python-format
 msgid "The amount is %(amount)s %(currency)s."
 msgstr "Částka činí %(amount)s %(currency)s."
@@ -899,11 +904,11 @@ msgstr "Formulář souhlasu bude dostupný pro opětovné uživatele."
 msgid "The consent form will not be available for re-users."
 msgstr "Formulář souhlasu nebude dostupný pro opětovné uživatele."
 
-#: src/questions/03-resource-allocation.html.j2:122
+#: src/questions/03-resource-allocation.html.j2:124
 msgid "The costs related to the used repositories will be carried by (one of) the departments involved in the project."
 msgstr "Náklady spojené s použitými repozitáři ponese (jedno z) pracovišť zapojených do projektu."
 
-#: src/questions/03-resource-allocation.html.j2:124
+#: src/questions/03-resource-allocation.html.j2:126
 msgid "The costs related to the used repositories will be carried by (one of) the institutes involved in the project."
 msgstr "Náklady spojené s použitými repozitáři ponese (jedna z) institucí zapojených do projektu."
 
@@ -1025,7 +1030,7 @@ msgstr "Následující projekt vyžaduje etické schválení:"
 msgid "The following projects require ethical approval:"
 msgstr "Tyto projekty vyžadují etické schválení:"
 
-#: src/questions/03-resource-allocation.html.j2:20
+#: src/questions/03-resource-allocation.html.j2:22
 msgid "The following resources will be dedicated to data management and ensuring that data will be FAIR:"
 msgstr "Na správu dat a zajištění, aby data byla FAIR, budou vyčleněny následující zdroje:"
 
@@ -1084,7 +1089,7 @@ msgstr "Repozitář bude poskytovat vyhledávání a jednoduché rozhraní pro p
 msgid "The repository will provide an advanced processing service."
 msgstr "Repozitář bude poskytovat pokročilé služby zpracování."
 
-#: src/questions/03-resource-allocation.html.j2:194
+#: src/questions/03-resource-allocation.html.j2:196
 #, python-format
 msgid "The required expertise from new people is: %(value)s"
 msgstr "Od nových pracovníků požadujeme tyto odborné znalosti: %(value)s"
@@ -1094,7 +1099,7 @@ msgstr "Od nových pracovníků požadujeme tyto odborné znalosti: %(value)s"
 msgid "The risk of information %(risks)s is acceptably low."
 msgstr "Riziko %(risks)s informací je přijatelně nízké."
 
-#: src/questions/03-resource-allocation.html.j2:186
+#: src/questions/03-resource-allocation.html.j2:188
 #, python-format
 msgid "The training will be: %(value)s"
 msgstr "Školení bude zahrnovat: %(value)s"
@@ -1127,7 +1132,7 @@ msgstr "Nejsou žádné pojmenované verze"
 msgid "There are no named versions."
 msgstr "Nejsou žádné pojmenované verze."
 
-#: src/projects.html.j2:53
+#: src/projects.html.j2:56
 msgid "There are no projects described for this DMP."
 msgstr "Pro tento DMP nejsou popsány žádné projekty."
 
@@ -1182,17 +1187,17 @@ msgstr "Mohou ale nosit data s sebou na noteboocích chráněných heslem."
 msgid "They will not carry data with them (e.g. on laptops, USB sticks, or other external media)."
 msgstr "Nebudou ani nosit data s sebou (např. na noteboocích, USB discích nebo jiných externích médiích)."
 
-#: src/questions/03-resource-allocation.html.j2:87
+#: src/questions/03-resource-allocation.html.j2:89
 #, python-format
 msgid "This cost will be covered as follows: %(value)s"
 msgstr "Tento náklad bude pokryt takto: %(value)s"
 
-#: src/questions/03-resource-allocation.html.j2:80
+#: src/questions/03-resource-allocation.html.j2:82
 #, python-format
 msgid "This cost will be covered by a funding grant (grant number: %(grant)s)."
 msgstr "Tento náklad bude pokryt z grantu (číslo grantu: %(grant)s)."
 
-#: src/questions/03-resource-allocation.html.j2:82
+#: src/questions/03-resource-allocation.html.j2:84
 msgid "This cost will be covered by a funding grant."
 msgstr "Tento náklad bude pokryt z grantu."
 
@@ -1240,24 +1245,24 @@ msgstr "Nejde o formát vhodný pro dlouhodobou archivaci; před koncem projektu
 
 #. %(purposes)s is an enumeration like "ensuring findability and ensuring
 #. accessibility"
-#: src/questions/03-resource-allocation.html.j2:69
+#: src/questions/03-resource-allocation.html.j2:71
 #, python-format
 msgid "This resource is allocated for %(purposes)s of data."
 msgstr "Tento zdroj je určen na %(purposes)s dat."
 
-#: src/questions/03-resource-allocation.html.j2:180
+#: src/questions/03-resource-allocation.html.j2:182
 msgid "To execute the DMP, additional specialist expertise is required and we have such trained support staff available."
 msgstr "K realizaci DMP jsou potřeba další odborné znalosti a máme k dispozici takto vyškolené podpůrné pracovníky."
 
-#: src/questions/03-resource-allocation.html.j2:191
+#: src/questions/03-resource-allocation.html.j2:193
 msgid "To execute the DMP, additional specialist expertise is required. We will be hiring new people with additional expertise."
 msgstr "K realizaci DMP jsou potřeba další odborné znalosti. Přijmeme nové pracovníky s dalšími odbornými znalostmi."
 
-#: src/questions/03-resource-allocation.html.j2:183
+#: src/questions/03-resource-allocation.html.j2:185
 msgid "To execute the DMP, additional specialist expertise is required. We will be training existing staff."
 msgstr "K realizaci DMP jsou potřeba další odborné znalosti. Stávající pracovníky proškolíme."
 
-#: src/questions/03-resource-allocation.html.j2:178
+#: src/questions/03-resource-allocation.html.j2:180
 msgid "To execute the DMP, no additional specialist expertise is required."
 msgstr "K realizaci DMP nejsou potřeba žádné další odborné znalosti."
 
@@ -1346,7 +1351,7 @@ msgstr "Osobní údaje shromažďujeme ve prospěch společnosti, což je důle�
 msgid "We do not plan to be archiving data in <em>cold storage</em> systems for long-term preservation already during the project."
 msgstr "Neplánujeme archivovat data v <em>archivních úložištích</em> pro dlouhodobé uchování již během projektu."
 
-#: src/questions/03-resource-allocation.html.j2:201
+#: src/questions/03-resource-allocation.html.j2:203
 msgid "We do not require any hardware or software in addition to what is usually available in the institute."
 msgstr "Nepotřebujeme žádný hardware ani software nad rámec toho, co je v instituci běžně k dispozici."
 
@@ -1373,7 +1378,7 @@ msgstr "Zabývali jsme se požadavky obecného nařízení o ochraně osobních 
 msgid "We have a consortium agreement that arranges Intellectual Property."
 msgstr "Máme smlouvu o konsorciu, která upravuje duševní vlastnictví."
 
-#: src/questions/03-resource-allocation.html.j2:136
+#: src/questions/03-resource-allocation.html.j2:138
 msgid "We have a reserved budget for the time and effort it will take to prepare the data for publication."
 msgstr "Máme vyčleněný rozpočet na čas a úsilí potřebné k přípravě dat ke zveřejnění."
 
@@ -1388,7 +1393,7 @@ msgstr "Máme specifický způsob pseudonymizace%(value)s"
 msgid "We have already contacted the repository."
 msgstr "Repozitář jsme již kontaktovali."
 
-#: src/questions/03-resource-allocation.html.j2:120
+#: src/questions/03-resource-allocation.html.j2:122
 msgid "We have budgeted for the costs in the project to pay charges of the used repositories."
 msgstr "Na poplatky použitých repozitářů máme v projektu vyčleněny prostředky."
 
@@ -1424,11 +1429,11 @@ msgstr "Musíme provést posouzení vlivu na ochranu osobních údajů (DPIA)."
 msgid "We pseudonymize inside the project; only a limited number of people can access the keys."
 msgstr "Pseudonymizujeme v rámci projektu; ke klíčům má přístup jen omezený počet osob."
 
-#: src/questions/03-resource-allocation.html.j2:207
+#: src/questions/03-resource-allocation.html.j2:209
 msgid "We require hardware or software in addition to what is usually available in the institute."
 msgstr "Potřebujeme hardware nebo software nad rámec toho, co je v instituci běžně k dispozici."
 
-#: src/questions/03-resource-allocation.html.j2:205
+#: src/questions/03-resource-allocation.html.j2:207
 #, python-format
 msgid "We require the following hardware or software in addition to what is usually available in the institute: %(value)s"
 msgstr "Potřebujeme následující hardware nebo software nad rámec toho, co je v instituci běžně k dispozici: %(value)s"
@@ -1445,7 +1450,7 @@ msgstr "Pro shromažďování osobních údajů používáme jiný právní zák
 
 #. %(service)s is the name of the Wizard as a link, %(instance)s the URL of the
 #. instance, %(project_url)s the URL of the project
-#: src/questions/06-other-issues.html.j2:11
+#: src/questions/06-other-issues.html.j2:13
 #, python-format
 msgid "We use the %(service)s with its <em>%(name)s</em> (ID: %(id)s) knowledge model to make our DMP. More specifically, we use the %(instance)s %(service_name_short)s instance where the project has the direct URL: %(project_url)s."
 msgstr "K vytvoření našeho DMP používáme %(service)s se znalostním modelem <em>%(name)s</em> (ID: %(id)s). Konkrétně používáme instanci %(service_name_short)s %(instance)s, kde má projekt přímou adresu: %(project_url)s."
@@ -1459,16 +1464,16 @@ msgstr "Tento repozitář budeme schopni podporovat dostatečně dlouho."
 msgid "We will be adding a reference to the published data to at least one data catalogue."
 msgstr "Odkaz na zveřejněná data přidáme alespoň do jednoho datového katalogu."
 
-#: src/questions/03-resource-allocation.html.j2:106
+#: src/questions/03-resource-allocation.html.j2:108
 msgid "We will be archiving data in <em>cold storage</em> systems for long-term preservation after the project but also already during the project."
 msgstr "Data budeme archivovat v <em>archivních úložištích</em> pro dlouhodobé uchování po skončení projektu, ale také již během něj."
 
-#: src/questions/03-resource-allocation.html.j2:110
+#: src/questions/03-resource-allocation.html.j2:112
 msgid "We will be archiving data in <em>cold storage</em> systems for long-term preservation after the project."
 msgstr "Data budeme archivovat v <em>archivních úložištích</em> pro dlouhodobé uchování po skončení projektu."
 
 #: src/questions/02-4-reusable.html.j2:143
-#: src/questions/03-resource-allocation.html.j2:108
+#: src/questions/03-resource-allocation.html.j2:110
 msgid "We will be archiving data in <em>cold storage</em> systems for long-term preservation already during the project."
 msgstr "Data budeme archivovat v <em>archivních úložištích</em> pro dlouhodobé uchování již během projektu."
 
@@ -1507,6 +1512,10 @@ msgstr "Budeme pracovat s novými typy dat. Proto pro některá naše data vytvo
 msgid "We will be using the following data formats and types:"
 msgstr "Budeme používat následující datové formáty a typy:"
 
+#: src/questions/06-other-issues.html.j2:31
+msgid "We will be using the following policies and procedures for data management:"
+msgstr "Pro správu dat budeme používat tyto zásady a postupy:"
+
 #: src/questions/02-3-interoperable.html.j2:71
 msgid "We will be using the following standards (encodings, terminologies, vocabularies, ontologies):"
 msgstr "Budeme používat tyto standardy (kódování, terminologie, slovníky, ontologie):"
@@ -1515,7 +1524,7 @@ msgstr "Budeme používat tyto standardy (kódování, terminologie, slovníky, 
 msgid "We will be working with the philosophy <em>as open as possible</em> for our data."
 msgstr "U našich dat se budeme řídit zásadou <em>tak otevřená, jak je to jen možné</em>."
 
-#: src/questions/03-resource-allocation.html.j2:128
+#: src/questions/03-resource-allocation.html.j2:130
 #, python-format
 msgid "We will carry the costs related to the used repositories by: %(value)s"
 msgstr "Náklady spojené s použitými repozitáři pokryjeme takto: %(value)s"
@@ -1540,6 +1549,10 @@ msgstr "V tomto formátu budeme mít uloženo jen malé množství dat."
 #, python-format
 msgid "We will mitigate the risk of information %(risks)s."
 msgstr "Riziko %(risks)s informací budeme zmírňovat."
+
+#: src/questions/06-other-issues.html.j2:45
+msgid "We will not be using any extra national, funder, sectoral, or departmental policies or procedures for data management."
+msgstr "Pro správu dat nebudeme používat žádné další národní, oborové ani institucionální zásady či postupy ani zásady poskytovatelů financování."
 
 #: src/questions/05-ethical-aspects.html.j2:107
 msgid "We will not collect any data related to individuals, i.e. \"personal data\"."
@@ -1631,23 +1644,23 @@ msgstr "datované"
 msgid "electronic patient records"
 msgstr "elektronických zdravotních záznamů pacientů"
 
-#: src/questions/03-resource-allocation.html.j2:54
+#: src/questions/03-resource-allocation.html.j2:56
 msgid "ensuring accessibility"
 msgstr "zajištění dostupnosti"
 
-#: src/questions/03-resource-allocation.html.j2:51
+#: src/questions/03-resource-allocation.html.j2:53
 msgid "ensuring findability"
 msgstr "zajištění dohledatelnosti"
 
-#: src/questions/03-resource-allocation.html.j2:57
+#: src/questions/03-resource-allocation.html.j2:59
 msgid "ensuring interoperability"
 msgstr "zajištění interoperability"
 
-#: src/questions/03-resource-allocation.html.j2:60
+#: src/questions/03-resource-allocation.html.j2:62
 msgid "ensuring reusability"
 msgstr "zajištění opětovné použitelnosti"
 
-#: src/projects.html.j2:36
+#: src/projects.html.j2:39
 msgid "grant number not yet given"
 msgstr "číslo grantu zatím neuvedeno"
 
@@ -1710,7 +1723,7 @@ msgstr "dotazníků"
 msgid "rejected"
 msgstr "zamítnuto"
 
-#: src/questions/03-resource-allocation.html.j2:63
+#: src/questions/03-resource-allocation.html.j2:65
 msgid "supporting management"
 msgstr "podporu správy"
 
