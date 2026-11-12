@@ -29,6 +29,11 @@ Starting v1.28.0, AI tools (Codex, Claude Code) are used to assist in the develo
 
 ## Changelog
 
+### 3.0.1
+
+- Fixed the document failing ("'dict object' has no attribute ...") for projects with selected question tags; questions hidden by the tags are shown as not answered
+- Fixed the document failing on a contributor whose typed reply ends with "ORCID:"
+
 ### 3.0.0
 
 - Replies are read by the annotations of the knowledge model (`json.key`, `json.value`) instead of UUIDs; requires the Common DSW Knowledge Model (`dsw.root`) or the Life Sciences DSW Knowledge Model (`dsw.lifesciences`) 2.8.1 or newer
